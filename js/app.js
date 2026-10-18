@@ -25,14 +25,22 @@
       lv1: 'Bàsic', lv2: 'Mitjà', lv3: 'Avançat',
       lv1d: 'Entendre i representar', lv2d: 'Aplicar i operar', lv3d: 'Combinar i resoldre problemes',
       exercise: 'Exercici', check: 'Comprova', next: 'Següent', hint: 'Pista', showSol: 'Veure la solució',
-      correct: 'Correcte!', wrong: 'Encara no.', almost: 'Gairebé!', solution: 'Solució', tryAgain: 'Revisa-ho i torna-ho a provar, o demana una pista.',
+      correct: 'Correcte!', wrong: 'Encara no.', almost: 'Gairebé!', solution: 'Solució', tryAgain: 'Equivocar-se és part d\'aprendre. Revisa-ho i torna-ho a provar, o demana una pista.',
       numerator: 'Numerador', denominator: 'Denominador', answer: 'Resposta',
       session: 'Aquesta sessió', mastery: 'Domini per nivells', infinite: 'Els exercicis es generen a l\'atzar: mai no n\'hi haurà dos d\'iguals.',
       chTitle: 'Repte de 10 preguntes', chText: 'Deu exercicis de dificultat creixent, un sol intent per a cadascun. El cronòmetre compta! Aconsegueix la medalla d\'or amb 9 o 10 encerts.',
       start: 'Comença el repte', best: 'Millor resultat', none: 'encara cap', gold: 'Or', silver: 'Plata', bronze: 'Bronze',
       result: 'Resultat', again: 'Torna-ho a provar', time: 'Temps', q: 'Pregunta',
       badgeNew: 'Nova medalla!', footer: 'Quadern de Mates · Matemàtiques d\'ESO', progressNote: 'El progrés es guarda en aquest navegador.',
-      emptyAnswer: 'Escriu una resposta abans de comprovar.', zeroDen: 'El denominador no pot ser 0.',
+      emptyAnswer: 'Escriu una resposta abans de comprovar.', diagLabel: 'On és l\'error?', situation: 'Situació real', curriculum: 'Currículum', report: 'El meu informe', teacher: 'Per al docent',
+      history: 'Matemàtiques amb història', ce: 'Competències específiques', sabers: 'Sabers (Decret 175/2022)', transv: 'Competències transversals', vectors: 'Vectors', ods: 'ODS',
+      seqNote: 'El Decret 175/2022 agrupa els sabers de 1r a 3r d\'ESO. La distribució per cursos d\'aquesta web és una proposta de seqüenciació.',
+      repTitle: 'El meu informe', repIntro: 'Escriu el teu nom i copia el codi. Envia\'l al teu professor o professora (per exemple, pel Classroom). El codi resumeix què has practicat i quins errors fas més sovint.',
+      name: 'Nom i cognom', copy: 'Copia el codi', copied: 'Codi copiat', noData: 'Encara no hi ha activitat. Practica una mica i torna-hi!',
+      exercises: 'exercicis encertats', bestCh: 'millor repte', topErr: 'Errors més freqüents', none2: 'cap error detectat',
+      tTitle: 'Per al docent', tIntro: 'Enganxa aquí els codis que t\'envia l\'alumnat (un per línia) per veure el resum del grup.', tPaste: 'Codis de l\'alumnat', tRead: 'Analitza el grup',
+      tStudents: 'alumnes', tClassErr: 'Errors més freqüents del grup', tMap: 'Mapa curricular de les unitats', tUse: 'Com fer-la servir a l\'aula', tInvalid: 'codis no vàlids',
+      student: 'Alumne/a', unitCol: 'Unitat', times: 'vegades', zeroDen: 'El denominador no pot ser 0.',
     },
     es: {
       title: 'Cuaderno de Mates', titleA: 'Cuaderno de', titleB: 'Mates',
@@ -43,14 +51,22 @@
       lv1: 'Básico', lv2: 'Medio', lv3: 'Avanzado',
       lv1d: 'Entender y representar', lv2d: 'Aplicar y operar', lv3d: 'Combinar y resolver problemas',
       exercise: 'Ejercicio', check: 'Comprueba', next: 'Siguiente', hint: 'Pista', showSol: 'Ver la solución',
-      correct: '¡Correcto!', wrong: 'Todavía no.', almost: '¡Casi!', solution: 'Solución', tryAgain: 'Revísalo y vuelve a intentarlo, o pide una pista.',
+      correct: '¡Correcto!', wrong: 'Todavía no.', almost: '¡Casi!', solution: 'Solución', tryAgain: 'Equivocarse es parte de aprender. Revísalo y vuelve a intentarlo, o pide una pista.',
       numerator: 'Numerador', denominator: 'Denominador', answer: 'Respuesta',
       session: 'Esta sesión', mastery: 'Dominio por niveles', infinite: 'Los ejercicios se generan al azar: nunca habrá dos iguales.',
       chTitle: 'Reto de 10 preguntas', chText: 'Diez ejercicios de dificultad creciente, un solo intento para cada uno. ¡El cronómetro cuenta! Consigue la medalla de oro con 9 o 10 aciertos.',
       start: 'Empieza el reto', best: 'Mejor resultado', none: 'todavía ninguno', gold: 'Oro', silver: 'Plata', bronze: 'Bronce',
       result: 'Resultado', again: 'Vuelve a intentarlo', time: 'Tiempo', q: 'Pregunta',
       badgeNew: '¡Nueva medalla!', footer: 'Cuaderno de Mates · Matemáticas de ESO', progressNote: 'El progreso se guarda en este navegador.',
-      emptyAnswer: 'Escribe una respuesta antes de comprobar.', zeroDen: 'El denominador no puede ser 0.',
+      emptyAnswer: 'Escribe una respuesta antes de comprobar.', diagLabel: '¿Dónde está el error?', situation: 'Situación real', curriculum: 'Currículo', report: 'Mi informe', teacher: 'Para el docente',
+      history: 'Matemáticas con historia', ce: 'Competencias específicas', sabers: 'Saberes (Decreto 175/2022)', transv: 'Competencias transversales', vectors: 'Vectores', ods: 'ODS',
+      seqNote: 'El Decreto 175/2022 agrupa los saberes de 1.º a 3.º de ESO. La distribución por cursos de esta web es una propuesta de secuenciación.',
+      repTitle: 'Mi informe', repIntro: 'Escribe tu nombre y copia el código. Envíaselo a tu profesor o profesora (por ejemplo, por Classroom). El código resume qué has practicado y qué errores cometes más a menudo.',
+      name: 'Nombre y apellido', copy: 'Copia el código', copied: 'Código copiado', noData: 'Todavía no hay actividad. ¡Practica un poco y vuelve!',
+      exercises: 'ejercicios acertados', bestCh: 'mejor reto', topErr: 'Errores más frecuentes', none2: 'ningún error detectado',
+      tTitle: 'Para el docente', tIntro: 'Pega aquí los códigos que te envía el alumnado (uno por línea) para ver el resumen del grupo.', tPaste: 'Códigos del alumnado', tRead: 'Analiza el grupo',
+      tStudents: 'alumnos', tClassErr: 'Errores más frecuentes del grupo', tMap: 'Mapa curricular de las unidades', tUse: 'Cómo usarla en el aula', tInvalid: 'códigos no válidos',
+      student: 'Alumno/a', unitCol: 'Unidad', times: 'veces', zeroDen: 'El denominador no puede ser 0.',
     },
     en: {
       title: 'Maths Notebook', titleA: 'Maths', titleB: 'Notebook',
@@ -61,14 +77,22 @@
       lv1: 'Basic', lv2: 'Intermediate', lv3: 'Advanced',
       lv1d: 'Understand and represent', lv2d: 'Apply and calculate', lv3d: 'Combine and solve problems',
       exercise: 'Exercise', check: 'Check', next: 'Next', hint: 'Hint', showSol: 'Show the solution',
-      correct: 'Correct!', wrong: 'Not yet.', almost: 'Almost!', solution: 'Solution', tryAgain: 'Check your work and try again, or ask for a hint.',
+      correct: 'Correct!', wrong: 'Not yet.', almost: 'Almost!', solution: 'Solution', tryAgain: 'Mistakes are part of learning. Check your work and try again, or ask for a hint.',
       numerator: 'Numerator', denominator: 'Denominator', answer: 'Answer',
       session: 'This session', mastery: 'Mastery by level', infinite: 'Exercises are generated at random: you will never see the same one twice.',
       chTitle: '10-question challenge', chText: 'Ten exercises that get harder, one try each. The clock is running! Get 9 or 10 right for a gold medal.',
       start: 'Start the challenge', best: 'Best result', none: 'none yet', gold: 'Gold', silver: 'Silver', bronze: 'Bronze',
       result: 'Result', again: 'Try again', time: 'Time', q: 'Question',
       badgeNew: 'New medal!', footer: 'Maths Notebook · Secondary school maths', progressNote: 'Progress is saved in this browser.',
-      emptyAnswer: 'Type an answer before checking.', zeroDen: 'The denominator can\'t be 0.',
+      emptyAnswer: 'Type an answer before checking.', diagLabel: 'What went wrong?', situation: 'Real situation', curriculum: 'Curriculum', report: 'My report', teacher: 'For teachers',
+      history: 'Maths with history', ce: 'Specific competences', sabers: 'Content (Decree 175/2022)', transv: 'Cross-curricular competences', vectors: 'Curriculum vectors', ods: 'SDGs',
+      seqNote: 'Catalan Decree 175/2022 groups the content for years 1 to 3 together. The year-by-year split on this site is a suggested sequence.',
+      repTitle: 'My report', repIntro: 'Type your name and copy the code. Send it to your teacher (for example, via Classroom). The code sums up what you have practised and the mistakes you make most often.',
+      name: 'Full name', copy: 'Copy the code', copied: 'Code copied', noData: 'No activity yet. Do some practice and come back!',
+      exercises: 'correct exercises', bestCh: 'best challenge', topErr: 'Most frequent mistakes', none2: 'no mistakes detected',
+      tTitle: 'For teachers', tIntro: 'Paste the codes your students send you (one per line) to see a summary of the group.', tPaste: 'Student codes', tRead: 'Analyse the group',
+      tStudents: 'students', tClassErr: 'Most frequent mistakes in the group', tMap: 'Curriculum map of the units', tUse: 'How to use it in class', tInvalid: 'invalid codes',
+      student: 'Student', unitCol: 'Unit', times: 'times', zeroDen: 'The denominator can\'t be 0.',
     },
   };
   const t = (k) => UI[S.lang][k] ?? UI.ca[k] ?? k;
@@ -143,6 +167,7 @@
   function renderHeader() {
     header.innerHTML = `<div class="wrap">
       <a class="brand" href="#"><span class="brand-mark">∑</span>${t('title')}</a>
+      <nav class="hlinks"><a href="#informe">${t('report')}</a><a href="#docent">${t('teacher')}</a></nav>
       <div class="score"><span><b>${S.points}</b><span class="lbl">${t('points')}</span></span><span><b>${S.streak}</b><span class="lbl">${t('streak')}</span></span></div>
       <div class="seg" role="group" aria-label="Idioma / Language">
         ${LANGS.map((l) => `<button type="button" data-lang="${l}" aria-pressed="${S.lang === l}">${l.toUpperCase()}</button>`).join('')}
@@ -183,6 +208,7 @@
             return `<button type="button" class="course-btn" data-course="${c.id}" aria-pressed="${c.id === course.id}"><b>${S.lang === 'en' ? c.id[0] : c.n}</b><span>ESO</span>${r ? `<span class="cnt">${r} ${t('ready')}</span>` : ''}</button>`;
           }).join('')}
         </div>
+        <p class="muted seqnote">${t('seqNote')}</p>
         <div class="blocks">
           ${Object.keys(QM.blocks).filter((b) => byBlock[b]).map((b) => {
             const B = QM.blocks[b];
@@ -213,7 +239,7 @@
     const unit = QM.units[key];
     if (!meta || !unit) { location.hash = ''; return; }
     const p = progress(key);
-    const tabs = [['teoria', t('theory')], ['explora', t('explore')], ['practica', t('practice')], ['repte', t('challenge')]];
+    const tabs = [['situacio', t('situation')], ['teoria', t('theory')], ['explora', t('explore')], ['practica', t('practice')], ['repte', t('challenge')], ['curriculum', t('curriculum')]];
     document.title = `${tr(meta)} · ${t('title')}`;
     app.innerHTML = `
       <div class="wrap">
@@ -232,7 +258,9 @@
       </div>`;
     app.querySelectorAll('[data-tab]').forEach((b) => b.onclick = () => { S.tab = b.dataset.tab; renderUnit(key); });
     const panel = app.querySelector('#panel');
-    if (S.tab === 'teoria') renderTheory(panel, unit);
+    if (S.tab === 'situacio') renderSituation(panel, unit);
+    else if (S.tab === 'curriculum') renderCurriculum(panel, unit);
+    else if (S.tab === 'teoria') renderTheory(panel, unit);
     else if (S.tab === 'explora') unit.explore(panel, S.lang);
     else if (S.tab === 'practica') renderPractice(panel, unit, key);
     else renderChallenge(panel, unit, key);
@@ -242,11 +270,124 @@
     const secs = unit.theory(S.lang);
     panel.innerHTML = `<div class="theory">
       <nav class="toc">${secs.map((s) => `<a href="#" data-go="${s.id}">${s.title}</a>`).join('')}</nav>
-      <article class="sheet">${secs.map((s, i) => `<section id="th-${s.id}"><h2><span class="k">§${i + 1}</span>${s.title}</h2>${s.html}</section>`).join('')}</article>
+      <article class="sheet">${secs.map((s, i) => `<section id="th-${s.id}"><h2><span class="k">§${i + 1}</span>${s.title}</h2>${s.html}</section>`).join('')}
+        ${unit.history ? `<aside class="hist"><span class="t">${t('history')}</span><p>${unit.history(S.lang)}</p></aside>` : ''}</article>
     </div>`;
     panel.querySelectorAll('[data-go]').forEach((a) => a.onclick = (e) => {
       e.preventDefault(); panel.querySelector('#th-' + a.dataset.go).scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  }
+
+  function renderSituation(panel, unit) {
+    if (!unit.situation) { S.tab = 'teoria'; renderTheory(panel, unit); return; }
+    const sit = unit.situation(S.lang);
+    panel.innerHTML = `<article class="sheet situation"><h2>${sit.title}</h2>${sit.html}</article>`;
+    if (sit.init) sit.init(panel);
+  }
+
+  function curriculumHTML(unit) {
+    const c = unit.cur; if (!c) return '';
+    return `<div class="curgrid">
+      <div class="box"><h3>${t('ce')}</h3><ul class="ce">${c.ce.map((n) => `<li><b>CE${n}</b> ${tr(QM.CE[n])}</li>`).join('')}</ul></div>
+      <div class="box"><h3>${t('sabers')}</h3><ul>${c.sabers.map((x) => `<li>${x}</li>`).join('')}</ul></div>
+      <div class="box"><h3>${t('transv')}</h3><ul>${c.transv.map((k) => `<li>${tr(QM.TRANSV[k])}</li>`).join('')}</ul></div>
+      <div class="box"><h3>${t('vectors')}</h3><ul>${c.vectors.map((k) => `<li>${tr(QM.VECTORS[k])}</li>`).join('')}</ul>${c.ods ? `<p class="muted">${t('ods')}: ${c.ods.join(', ')}</p>` : ''}</div>
+    </div>`;
+  }
+  function renderCurriculum(panel, unit) {
+    panel.innerHTML = `${curriculumHTML(unit)}<p class="muted" style="margin-top:14px">${t('seqNote')}</p>`;
+  }
+
+  // ---------- Informe de l'alumne ----------
+  function readyUnits() {
+    const out = [];
+    QM.courses.forEach((c) => c.units.forEach((u) => { const key = c.id + '-' + u.id; if (u.ready && QM.units[key]) out.push({ key, meta: u, course: c }); }));
+    return out;
+  }
+  function collect() {
+    const u = {};
+    readyUnits().forEach(({ key }) => {
+      const p = store.get('prog_' + key, null), b = store.get('best_' + key, null), e = store.get('err_' + key, null);
+      if (p || b || e) u[key] = { p: p || {}, b: b ? b.score : null, e: e || {} };
+    });
+    return u;
+  }
+  const encode = (obj) => 'QM1-' + btoa(unescape(encodeURIComponent(JSON.stringify(obj))));
+  const decode = (code) => JSON.parse(decodeURIComponent(escape(atob(code.trim().replace(/^QM1-/, '')))));
+  const unitName = (key) => { const r = readyUnits().find((x) => x.key === key); return r ? `${tr(r.course)} · ${tr(r.meta)}` : key; };
+  const topErrors = (e, n = 3) => Object.entries(e || {}).sort((a, b) => b[1] - a[1]).slice(0, n);
+
+  function renderReport() {
+    const data = collect(), keys = Object.keys(data);
+    app.innerHTML = `<div class="wrap page">
+      <h1>${t('repTitle')}</h1><p class="muted">${t('repIntro')}</p>
+      ${keys.length ? keys.map((k) => {
+        const d = data[k], total = (d.p[1] || 0) + (d.p[2] || 0) + (d.p[3] || 0), errs = topErrors(d.e);
+        return `<section class="box"><h3>${unitName(k)}</h3>
+          <p><b class="mono">${total}</b> ${t('exercises')} (${t('lv1')} ${d.p[1] || 0} · ${t('lv2')} ${d.p[2] || 0} · ${t('lv3')} ${d.p[3] || 0})${d.b != null ? ` · ${t('bestCh')}: <b class="mono">${d.b}/10</b>` : ''}</p>
+          <p class="muted">${t('topErr')}:</p>${errs.length ? `<ul>${errs.map(([m, n]) => `<li>${m} <span class="muted">(${n})</span></li>`).join('')}</ul>` : `<p>${t('none2')}</p>`}</section>`;
+      }).join('') : `<p class="box">${t('noData')}</p>`}
+      <div class="box">
+        <label for="rep-name"><b>${t('name')}</b></label>
+        <input id="rep-name" class="txt" autocomplete="name" value="${(store.get('name', '') || '').replace(/"/g, '')}">
+        <textarea id="rep-code" class="code" rows="3" readonly></textarea>
+        <div class="actions"><button type="button" class="btn" id="rep-copy">${t('copy')}</button><span id="rep-ok" class="good"></span></div>
+      </div></div>`;
+    const name = app.querySelector('#rep-name'), code = app.querySelector('#rep-code');
+    const upd = () => { store.set('name', name.value); code.value = encode({ n: name.value.trim(), t: new Date().toISOString().slice(0, 10), u: data }); };
+    name.addEventListener('input', upd); upd();
+    app.querySelector('#rep-copy').onclick = () => {
+      const done = () => { app.querySelector('#rep-ok').textContent = t('copied'); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code.value).then(done, () => { code.select(); });
+      else code.select();
+    };
+  }
+
+  // ---------- Pàgina per al docent ----------
+  function renderTeacher() {
+    const units = readyUnits();
+    app.innerHTML = `<div class="wrap page">
+      <h1>${t('tTitle')}</h1>
+      <section class="box"><h3>${t('tPaste')}</h3><p class="muted">${t('tIntro')}</p>
+        <textarea id="tc-in" class="code" rows="5" placeholder="QM1-..."></textarea>
+        <div class="actions"><button type="button" class="btn" id="tc-go">${t('tRead')}</button></div>
+        <div id="tc-out"></div></section>
+      <section><h2>${t('tMap')}</h2><p class="muted">${t('seqNote')}</p>
+        ${units.map(({ key, meta, course }) => `<details class="mapu"><summary><b>${tr(course)} · ${tr(meta)}</b> <span class="muted">(${tr(QM.blocks[meta.b])})</span></summary>${curriculumHTML(QM.units[key])}</details>`).join('')}
+      </section>
+      <section class="box"><h3>${t('tUse')}</h3>${S.lang === 'en' ? `<ol>
+        <li>Open each unit with the <b>Real situation</b>: the driving question gives meaning to what comes next.</li>
+        <li>Use <b>Theory</b> and <b>Explore</b> for the class explanation (the labs work well on a projector).</li>
+        <li>In <b>Practice</b>, each student works at their own level; the site detects their typical mistakes.</li>
+        <li>Collect the <b>report codes</b> and paste them here: the group's most frequent mistakes tell you what to revisit.</li>
+        <li>Use the <b>Challenge</b> as self-assessment at the end of the unit.</li></ol>` : S.lang === 'es' ? `<ol>
+        <li>Empieza cada unidad con la <b>Situación real</b>: la pregunta motriz da sentido a lo que viene después.</li>
+        <li>Usa <b>Teoría</b> y <b>Explora</b> para la explicación en clase (los laboratorios funcionan bien en el proyector).</li>
+        <li>En <b>Practica</b>, cada alumno trabaja a su nivel; la web detecta sus errores típicos.</li>
+        <li>Recoge los <b>códigos de informe</b> y pégalos aquí: los errores más frecuentes del grupo te dicen qué hay que reforzar.</li>
+        <li>Usa el <b>Reto</b> como autoevaluación al final de la unidad.</li></ol>` : `<ol>
+        <li>Comença cada unitat amb la <b>Situació real</b>: la pregunta motriu dona sentit al que ve després.</li>
+        <li>Fes servir <b>Teoria</b> i <b>Explora</b> per a l'explicació a classe (els laboratoris funcionen bé al projector).</li>
+        <li>A <b>Practica</b>, cada alumne treballa al seu nivell; la web detecta els seus errors típics.</li>
+        <li>Recull els <b>codis d'informe</b> i enganxa'ls aquí: els errors més freqüents del grup et diuen què cal reforçar.</li>
+        <li>Fes servir el <b>Repte</b> com a autoavaluació al final de la unitat.</li></ol>`}</section>
+    </div>`;
+    app.querySelector('#tc-go').onclick = () => {
+      const lines = app.querySelector('#tc-in').value.split(/\s+/).filter((x) => x.startsWith('QM1-'));
+      const studs = []; let bad = 0;
+      lines.forEach((l) => { try { studs.push(decode(l)); } catch (e) { bad++; } });
+      const keys = [...new Set(studs.flatMap((s) => Object.keys(s.u || {})))];
+      const classErr = {};
+      studs.forEach((s) => Object.entries(s.u || {}).forEach(([k, d]) => Object.entries(d.e || {}).forEach(([m, n]) => {
+        const id = k + '|' + m; classErr[id] = classErr[id] || { k, m, n: 0, who: 0 }; classErr[id].n += n; classErr[id].who++;
+      })));
+      const errs = Object.values(classErr).sort((a, b) => b.who - a.who || b.n - a.n).slice(0, 8);
+      app.querySelector('#tc-out').innerHTML = `<p><b class="mono">${studs.length}</b> ${t('tStudents')}${bad ? ` · ${bad} ${t('tInvalid')}` : ''}</p>
+        ${errs.length ? `<h3>${t('tClassErr')}</h3><ul>${errs.map((e) => `<li><b>${e.who}/${studs.length}</b> ${t('tStudents')} · ${e.m} <span class="muted">(${unitName(e.k)}, ${e.n} ${t('times')})</span></li>`).join('')}</ul>` : ''}
+        ${studs.length ? `<div class="tblwrap"><table class="tbl"><thead><tr><th>${t('student')}</th>${keys.map((k) => `<th>${unitName(k)}</th>`).join('')}</tr></thead><tbody>
+          ${studs.map((s) => `<tr><td>${(s.n || '—').replace(/</g, '&lt;')}</td>${keys.map((k) => { const d = (s.u || {})[k]; return `<td>${d ? `${d.p[1] || 0} · ${d.p[2] || 0} · ${d.p[3] || 0}${d.b != null ? ` <span class="muted">(${d.b}/10)</span>` : ''}` : '—'}</td>`; }).join('')}</tr>`).join('')}
+        </tbody></table></div><p class="muted">${t('lv1')} · ${t('lv2')} · ${t('lv3')} (${t('challenge')})</p>` : ''}`;
+    };
   }
 
   // Llegeix un nombre escrit per l'alumne (accepta coma decimal i el signe −)
@@ -282,6 +423,15 @@
       chosen = ex.options[+b.dataset.i]; box.querySelectorAll('.choice').forEach((x) => x.setAttribute('aria-pressed', x === b));
     });
     return () => (chosen == null ? { empty: true } : chosen);
+  }
+
+  // Detecta l'error típic i el guarda per a l'informe de la unitat
+  function diagnose(ex, val, key) {
+    if (!ex.diagnose) return null;
+    const d = ex.diagnose(val);
+    if (!d) return null;
+    const errs = store.get('err_' + key, {}); errs[d.key] = (errs[d.key] || 0) + 1; store.set('err_' + key, errs);
+    return d.msg;
   }
 
   function evaluate(ex, val) {
@@ -338,7 +488,7 @@
       const fb = exEl.querySelector('#fb');
       const check = () => {
         if (solved) { next(); return; }
-        const r = evaluate(ex, read());
+        const val = read(), r = evaluate(ex, val);
         if (r.state === 'empty') { fb.innerHTML = `<div class="fb hint"><strong>${t('emptyAnswer')}</strong></div>`; return; }
         if (r.state === 'zero') { fb.innerHTML = `<div class="fb ko"><strong>${t('zeroDen')}</strong></div>`; return; }
         tries++;
@@ -355,7 +505,8 @@
         } else {
           if (tries === 1) hist.push(false);
           S.streak = 0; renderHeader();
-          fb.innerHTML = `<div class="fb ko"><strong>${t('wrong')}</strong><div>${t('tryAgain')}</div>
+          const dg = diagnose(ex, val, key);
+          fb.innerHTML = `<div class="fb ko"><strong>${t('wrong')}</strong>${dg ? `<div class="diag"><span>${t('diagLabel')}</span>${dg}</div>` : ''}<div>${t('tryAgain')}</div>
             ${tries >= 2 ? `<button type="button" class="btn ghost" id="b-sol" style="justify-self:start">${t('showSol')}</button>` : ''}</div>`;
           const bs = fb.querySelector('#b-sol');
           if (bs) bs.onclick = () => { solved = true; fb.innerHTML = `<div class="fb hint"><strong>${t('solution')}</strong><div>${ex.sol}</div></div>`; exEl.querySelector('#b-check').textContent = t('next'); };
@@ -405,12 +556,12 @@
         let done = false;
         const go = () => {
           if (done) { i++; ask(); return; }
-          const r = evaluate(ex, read());
+          const val = read(), r = evaluate(ex, val);
           if (r.state === 'empty') { fb.innerHTML = `<div class="fb hint"><strong>${t('emptyAnswer')}</strong></div>`; return; }
           if (r.state === 'zero') { fb.innerHTML = `<div class="fb ko"><strong>${t('zeroDen')}</strong></div>`; return; }
-          done = true; const ok = r.state === 'ok'; marks.push(ok); if (ok) score++;
+          done = true; let dg = null; const ok = r.state === 'ok'; marks.push(ok); if (ok) score++;
           fb.innerHTML = ok ? `<div class="fb ok"><strong>${t('correct')}</strong></div>`
-                            : `<div class="fb ko"><strong>${r.state === 'partial' ? t('almost') : t('wrong')}</strong><div>${t('solution')}: ${ex.sol}</div></div>`;
+                            : `<div class="fb ko"><strong>${r.state === 'partial' ? t('almost') : t('wrong')}</strong>${r.state === 'ko' && (dg = diagnose(ex, val, key)) ? `<div class="diag"><span>${t('diagLabel')}</span>${dg}</div>` : ''}<div>${t('solution')}: ${ex.sol}</div></div>`;
           btn.textContent = t('next');
         };
         btn.onclick = go;
@@ -447,9 +598,11 @@
     document.title = t('title');
     renderHeader(); renderFooter();
     if (key && QM.units[key]) {
-      if (key !== lastKey) { S.tab = 'teoria'; lastKey = key; window.scrollTo(0, 0); }
+      if (key !== lastKey) { S.tab = 'situacio'; lastKey = key; window.scrollTo(0, 0); }
       renderUnit(key);
-    } else { lastKey = null; renderHome(); }
+    } else if (key === 'informe') { lastKey = null; renderReport(); }
+    else if (key === 'docent') { lastKey = null; renderTeacher(); }
+    else { lastKey = null; renderHome(); }
   }
   window.addEventListener('hashchange', route);
   route();

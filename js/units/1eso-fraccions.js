@@ -120,6 +120,11 @@
       hint: T(L, 'Compta en quantes parts iguals està dividida (denominador) i quantes n\'hi ha de pintades (numerador).',
                  'Cuenta en cuántas partes iguales está dividida (denominador) y cuántas hay pintadas (numerador).',
                  'Count how many equal parts it is divided into (denominator) and how many are shaded (numerator).'),
+      diagnose: QM.diag(L, [
+        [(a) => n !== d && QM.fe(a, d, n), `Has posat el numerador i el denominador al revés.`, `Has puesto el numerador y el denominador al revés.`, `You swapped the numerator and the denominator.`],
+        [(a) => QM.fe(a, n, d - n), `El denominador són totes les parts, no només les que estan en blanc.`, `El denominador son todas las partes, no solo las que están en blanco.`, `The denominator is all the parts, not just the unshaded ones.`],
+        [(a) => QM.fe(a, d - n, d), `Has comptat les parts en blanc. Compta les pintades.`, `Has contado las partes en blanco. Cuenta las pintadas.`, `You counted the unshaded parts. Count the shaded ones.`],
+      ]),
       sol: `${F(n, d)} : ${T(L, `${d} parts iguals, ${n} de pintades.`, `${d} partes iguales, ${n} pintadas.`, `${d} equal parts, ${n} shaded.`)}`,
     };
   }
@@ -136,6 +141,9 @@
       hint: askNum
         ? T(L, `Per quin nombre has multiplicat ${b} per obtenir ${b * k}? Fes el mateix amb el numerador.`, `¿Por qué número has multiplicado ${b} para obtener ${b * k}? Haz lo mismo con el numerador.`, `What did you multiply ${b} by to get ${b * k}? Do the same to the numerator.`)
         : T(L, `Per quin nombre has multiplicat ${a} per obtenir ${a * k}? Fes el mateix amb el denominador.`, `¿Por qué número has multiplicado ${a} para obtener ${a * k}? Haz lo mismo con el denominador.`, `What did you multiply ${a} by to get ${a * k}? Do the same to the denominator.`),
+      diagnose: QM.diag(L, [
+        [(x) => x === (askNum ? a + b * k - b : b + a * k - a), `Has sumat la mateixa quantitat a dalt i a baix. Per obtenir una fracció equivalent cal multiplicar pel mateix nombre.`, `Has sumado la misma cantidad arriba y abajo. Para obtener una fracción equivalente hay que multiplicar por el mismo número.`, `You added the same amount top and bottom. To get an equivalent fraction you must multiply by the same number.`],
+      ]),
       sol: `<div class="calc">${F(a, b)} = ${F(`${a} · ${k}`, `${b} · ${k}`)} = ${F(a * k, b * k)}</div>`,
     };
   }
@@ -150,6 +158,9 @@
       check: (a) => fracEq(a, N, D) ? (gcd(a.n, a.d) === 1 ? true : 'partial') : false,
       partial: T(L, 'És equivalent, però encara es pot simplificar més.', 'Es equivalente, pero aún se puede simplificar más.', 'It is equivalent, but you can still simplify it.'),
       hint: T(L, `Busca el m.c.d. de ${N} i ${D}.`, `Busca el m.c.d. de ${N} y ${D}.`, `Find the GCD of ${N} and ${D}.`),
+      diagnose: QM.diag(L, [
+        [(a) => (a.n === n) !== (a.d === d), `Has de dividir el numerador i el denominador pel mateix nombre.`, `Tienes que dividir el numerador y el denominador por el mismo número.`, `Divide the numerator and the denominator by the same number.`],
+      ]),
       sol: `<div class="calc">${T(L, 'm.c.d.', 'm.c.d.', 'GCD')}(${N}, ${D}) = ${k} → ${F(`${N} : ${k}`, `${D} : ${k}`)} = ${F(n, d)}</div>`,
     };
   }
@@ -169,6 +180,10 @@
           <div class="calc">${F(a, b)} <span class="op">□</span> ${F(c, d)}</div>`,
       kind: 'choice', options: ['<', '=', '>'], check: (x) => x === ans,
       hint: T(L, `Redueix-les a denominador ${m} (el m.c.m. de ${b} i ${d}).`, `Redúcelas a denominador ${m} (el m.c.m. de ${b} y ${d}).`, `Rewrite both with denominator ${m} (the LCM of ${b} and ${d}).`),
+      diagnose: QM.diag(L, [
+        [(x) => x === (a > c ? '>' : a < c ? '<' : '='), `Només has comparat els numeradors. Amb denominadors diferents, primer redueix a comú denominador.`, `Solo has comparado los numeradores. Con denominadores distintos, primero reduce a común denominador.`, `You only compared the numerators. With different denominators, first find a common denominator.`],
+        [(x) => x === (b < d ? '>' : b > d ? '<' : '='), `Només has comparat els denominadors. Redueix a comú denominador i compara numeradors.`, `Solo has comparado los denominadores. Reduce a común denominador y compara numeradores.`, `You only compared the denominators. Use a common denominator and compare numerators.`],
+      ]),
       sol: `<div class="calc">${F(a * m / b, m)} ${ans} ${F(c * m / d, m)} → ${F(a, b)} ${ans} ${F(c, d)}</div>`,
     };
   }
@@ -184,6 +199,10 @@
       check: (x) => fracEq(x, R, m) ? (gcd(x.n, x.d) === 1 ? true : 'partial') : false,
       partial: T(L, 'El resultat és correcte, però es pot simplificar.', 'El resultado es correcto, pero se puede simplificar.', 'The answer is right, but it can be simplified.'),
       hint: T(L, `Primer busca el m.c.m.(${b}, ${d}) per tenir el mateix denominador.`, `Primero busca el m.c.m.(${b}, ${d}) para tener el mismo denominador.`, `First find LCM(${b}, ${d}) to get a common denominator.`),
+      diagnose: QM.diag(L, [
+        [(x) => QM.fe(x, sign === '+' ? a + c : a - c, sign === '+' ? b + d : b - d), `Has operat els denominadors. Els denominadors no se sumen ni es resten: primer cal un denominador comú.`, `Has operado los denominadores. Los denominadores no se suman ni se restan: primero hace falta un denominador común.`, `You added or subtracted the denominators. Never do that: find a common denominator first.`],
+        [(x) => QM.fe(x, sign === '+' ? a + c : a - c, m), `Has trobat el denominador comú, però no has transformat els numeradors.`, `Has encontrado el denominador común, pero no has transformado los numeradores.`, `You found the common denominator but didn't convert the numerators.`],
+      ]),
       sol: `<div class="calc">${F(A, m)} ${op(sign)} ${F(C, m)} = ${F(R, m)}${gcd(R, m) > 1 ? ' = ' + Fs(R, m) : ''}</div>`,
     };
   }
@@ -199,6 +218,10 @@
     return {
       q: `<p>${ctx}</p>`, kind: 'num', check: (x) => x === ans,
       hint: T(L, `Divideix ${N} entre ${d} i multiplica per ${n}.`, `Divide ${N} entre ${d} y multiplica por ${n}.`, `Divide ${N} by ${d} and multiply by ${n}.`),
+      diagnose: QM.diag(L, [
+        [(r) => QM.ap(r, N / n * d), `Has dividit pel numerador i multiplicat pel denominador. És al revés.`, `Has dividido por el numerador y multiplicado por el denominador. Es al revés.`, `You divided by the numerator and multiplied by the denominator. It's the other way round.`],
+        [(r) => r === N / d, `Has calculat només una part. Ara multiplica pel numerador.`, `Has calculado solo una parte. Ahora multiplica por el numerador.`, `You only worked out one part. Now multiply by the numerator.`],
+      ]),
       sol: `<div class="calc">(${N} : ${d}) · ${n} = ${N / d} · ${n} = ${ans}</div>`,
     };
   }
@@ -214,6 +237,10 @@
       partial: T(L, 'Correcte, però encara es pot simplificar.', 'Correcto, pero aún se puede simplificar.', 'Right, but it can still be simplified.'),
       hint: mul ? T(L, 'Numerador per numerador i denominador per denominador.', 'Numerador por numerador y denominador por denominador.', 'Numerator times numerator, denominator times denominator.')
                 : T(L, 'Per dividir, multiplica en creu.', 'Para dividir, multiplica en cruz.', 'To divide, cross multiply.'),
+      diagnose: QM.diag(L, [
+        [(x) => mul && QM.fe(x, a * d, b * c), `Has multiplicat en creu, però això és per dividir. Per multiplicar: numerador per numerador i denominador per denominador.`, `Has multiplicado en cruz, pero eso es para dividir. Para multiplicar: numerador por numerador y denominador por denominador.`, `You cross multiplied, but that's for dividing. To multiply: numerator times numerator, denominator times denominator.`],
+        [(x) => !mul && QM.fe(x, a * c, b * d), `Has multiplicat en línia. Per dividir cal multiplicar en creu.`, `Has multiplicado en línea. Para dividir hay que multiplicar en cruz.`, `You multiplied straight across. To divide you must cross multiply.`],
+      ]),
       sol: `<div class="calc">${F(mul ? `${a} · ${c}` : `${a} · ${d}`, mul ? `${b} · ${d}` : `${b} · ${c}`)} = ${F(N, D)}${gcd(N, D) > 1 ? ' = ' + Fs(N, D) : ''}</div>`,
     };
   }
@@ -230,6 +257,9 @@
       check: (x) => fracEq(x, R, m) ? (gcd(x.n, x.d) === 1 ? true : 'partial') : false,
       partial: T(L, 'El valor és correcte. Ara simplifica\'l.', 'El valor es correcto. Ahora simplifícalo.', 'The value is right. Now simplify it.'),
       hint: T(L, 'Primer la multiplicació, després la suma.', 'Primero la multiplicación, después la suma.', 'Multiplication first, then addition.'),
+      diagnose: QM.diag(L, [
+        [(x) => QM.fe(x, (a * d + c * b) * e, b * d * f), `Has sumat abans de multiplicar. La multiplicació té prioritat.`, `Has sumado antes de multiplicar. La multiplicación tiene prioridad.`, `You added before multiplying. Multiplication comes first.`],
+      ]),
       sol: `<div class="calc">${F(a, b)} ${op('+')} ${Fs(pn, pd)} = ${F(a * m / b, m)} ${op('+')} ${F(pn * m / pd, m)} = ${F(R, m)}${gcd(R, m) > 1 ? ' = ' + Fs(R, m) : ''}</div>`,
     };
   }
@@ -253,6 +283,11 @@
       hint: T(L, `Atenció: la segona fracció és del que queda, no del total. Primer calcula què queda després del primer pas.`,
                  `Atención: la segunda fracción es de lo que queda, no del total. Primero calcula qué queda tras el primer paso.`,
                  `Careful: the second fraction is of what is left, not of the total. First work out what is left after step one.`),
+      diagnose: QM.diag(L, [
+        [(r) => QM.ap(r, tot - s1 - tot / d * c), `La segona fracció és del que queda, no del total.`, `La segunda fracción es de lo que queda, no del total.`, `The second fraction is of what's left, not of the total.`],
+        [(r) => r === R, `Només has fet el primer pas. Falta treure la segona part.`, `Solo has hecho el primer paso. Falta quitar la segunda parte.`, `You only did the first step. You still need to take away the second part.`],
+        [(r) => r === s1 + s2, `Has calculat el que s'ha gastat. La pregunta demana el que queda.`, `Has calculado lo que se ha gastado. La pregunta pide lo que queda.`, `You worked out what was used. The question asks what's left.`],
+      ]),
       sol: `<div class="calc">${F(a, b)} ${T(L, 'de', 'de', 'of')} ${tot} = ${s1} → ${T(L, 'queden', 'quedan', 'left')} ${R}</div>
             <div class="calc">${F(c, d)} ${T(L, 'de', 'de', 'of')} ${R} = ${s2} → ${T(L, 'queden', 'quedan', 'left')} <b>${ans}</b></div>`,
     };
@@ -330,4 +365,74 @@
       3: [mulDiv, combined, problem],
     },
   };
+})();
+
+// ---------- CURRÍCULUM, SITUACIÓ D'APRENENTATGE I HISTÒRIA ----------
+(function () {
+  const { F, T, simp } = QM;
+  const U = QM.units['1eso-fraccions'];
+  U.cur = {
+    ce: [1, 2, 5, 6, 7, 8],
+    sabers: [
+      'Sentit numèric. Quantitat: «Ús dels nombres enters, fraccions, decimals i arrels per a expressar quantitats».',
+      'Sentit numèric. Quantitat: «Ús de les fraccions en l’antiguitat (Egipte, l’Índia i Grècia) i en l’actualitat».',
+      'Sentit numèric. Sentit de les operacions: «Reconeixement i aplicació de les operacions amb nombres enters, fraccionaris o decimals».',
+      'Sentit numèric. Relacions: «Comparació i ordenació de fraccions, decimals i percentatges amb eficàcia».',
+    ],
+    transv: ['cpsaa', 'dig', 'ciu'],
+    vectors: ['comp', 'univ', 'ling', 'ciut', 'ben'],
+    ods: [12],
+  };
+  // Recepta per a 6 persones: [nom, numerador, denominador, unitat]
+  const RECIPE = [
+    [{ ca: 'Farina', es: 'Harina', en: 'Flour' }, 3, 4, 'kg'],
+    [{ ca: 'Sucre', es: 'Azúcar', en: 'Sugar' }, 1, 3, 'kg'],
+    [{ ca: 'Llet', es: 'Leche', en: 'Milk' }, 1, 2, 'L'],
+    [{ ca: 'Oli', es: 'Aceite', en: 'Oil' }, 1, 4, 'L'],
+    [{ ca: 'Ous', es: 'Huevos', en: 'Eggs' }, 3, 1, ''],
+  ];
+  const mixed = (n, d) => {
+    [n, d] = simp(n, d); const w = Math.floor(n / d), r = n % d;
+    if (r === 0) return `<span class="mono">${w}</span>`;
+    return (w ? `<span class="mono">${w}</span> ` : '') + F(r, d);
+  };
+  U.situation = (L) => ({
+    title: T(L, 'La coca de la festa de la classe', 'El bizcocho de la fiesta de la clase', 'The class party cake'),
+    html: `
+      <p class="lead2">${T(L,
+        'Per a la festa de final de trimestre, el vostre grup ha de cuinar coca per a tota la classe. La recepta de l\'àvia és per a 6 persones i les quantitats estan en fraccions. A més, l\'any passat en va sobrar molta i es va llençar.',
+        'Para la fiesta de final de trimestre, vuestro grupo tiene que cocinar bizcocho para toda la clase. La receta de la abuela es para 6 personas y las cantidades están en fracciones. Además, el año pasado sobró mucho y se tiró.',
+        'For the end-of-term party, your group has to bake cake for the whole class. Grandma\'s recipe serves 6 and the amounts are fractions. Last year a lot was left over and thrown away.')}</p>
+      <div class="rule"><span class="t">${T(L, 'Pregunta motriu', 'Pregunta motriz', 'Driving question')}</span>
+        ${T(L, 'Quina quantitat de cada ingredient necessitem perquè n\'hi hagi per a tothom i no se\'n llenci?', '¿Qué cantidad de cada ingrediente necesitamos para que haya para todos y no se tire nada?', 'How much of each ingredient do we need so there is enough for everyone and nothing is wasted?')}</div>
+      <h3>${T(L, 'Què fareu', 'Qué haréis', 'What you will do')}</h3>
+      <ol>
+        <li>${T(L, 'Repasseu a <b>Teoria</b> com es multiplica una fracció per un nombre i com se simplifica.', 'Repasad en <b>Teoría</b> cómo se multiplica una fracción por un número y cómo se simplifica.', 'Review in <b>Theory</b> how to multiply a fraction by a whole number and simplify.')}</li>
+        <li>${T(L, 'En equips, calculeu a mà les quantitats per al nombre d\'alumnes de la classe. Després, comproveu-les amb la calculadora de sota.', 'En equipos, calculad a mano las cantidades para el número de alumnos de la clase. Después, comprobadlas con la calculadora de abajo.', 'In teams, work out the amounts by hand for the number of students in your class. Then check them with the calculator below.')}</li>
+        <li>${T(L, 'Si l\'any passat en va sobrar ' + F(1, 5) + ', quanta gent podríeu alimentar amb el que es va llençar?', 'Si el año pasado sobró ' + F(1, 5) + ', ¿a cuánta gente podríais alimentar con lo que se tiró?', 'If ' + F(1, 5) + ' was left over last year, how many people could have eaten what was thrown away?')}</li>
+        <li>${T(L, 'Practiqueu a <b>Practica</b> fins arribar al nivell Mitjà sense errors.', 'Practicad en <b>Practica</b> hasta llegar al nivel Medio sin errores.', 'Practise in <b>Practice</b> until you reach Intermediate without mistakes.')}</li>
+      </ol>
+      <div class="tool">
+        <h3>${T(L, 'Calculadora de la recepta', 'Calculadora de la receta', 'Recipe calculator')}</h3>
+        <label for="rc-n">${T(L, 'Persones', 'Personas', 'People')}: <output id="rc-no"></output><input type="range" id="rc-n" min="6" max="36" value="24"></label>
+        <label class="check"><input type="checkbox" id="rc-show"> ${T(L, 'Mostra els resultats (primer calculeu-los vosaltres!)', 'Muestra los resultados (¡primero calculadlos vosotros!)', 'Show the results (work them out yourselves first!)')}</label>
+        <div id="rc-table"></div>
+      </div>
+      <div class="rule product"><span class="t">${T(L, 'Producte final', 'Producto final', 'Final product')}</span>
+        ${T(L, 'Una fitxa de recepta adaptada a la vostra classe, amb les quantitats en fracció i en decimal, i una proposta per no malbaratar menjar.', 'Una ficha de receta adaptada a vuestra clase, con las cantidades en fracción y en decimal, y una propuesta para no desperdiciar comida.', 'A recipe card adapted to your class, with amounts as fractions and decimals, and a proposal to avoid wasting food.')}</div>
+      <p class="muted">${T(L, 'Connexió amb l\'ODS 12: producció i consum responsables (malbaratament alimentari).', 'Conexión con el ODS 12: producción y consumo responsables (desperdicio alimentario).', 'Link to SDG 12: responsible consumption and production (food waste).')}</p>`,
+    init(root) {
+      const n = root.querySelector('#rc-n'), show = root.querySelector('#rc-show');
+      const draw = () => {
+        const N = +n.value; root.querySelector('#rc-no').textContent = N;
+        root.querySelector('#rc-table').innerHTML = `<table class="tbl"><thead><tr><th>${T(L, 'Ingredient', 'Ingrediente', 'Ingredient')}</th><th>6</th><th>${N}</th></tr></thead><tbody>${RECIPE.map(([name, a, b, u]) =>
+          `<tr><td>${name[L] || name.ca}</td><td>${mixed(a, b)} ${u}</td><td>${show.checked ? mixed(a * N, b * 6) + ' ' + u : '?'}</td></tr>`).join('')}</tbody></table>`;
+      };
+      n.addEventListener('input', draw); show.addEventListener('change', draw); draw();
+    },
+  });
+  U.history = (L) => T(L,
+    `<b>Fraccions egípcies.</b> Fa uns 3.600 anys, al papir de Rhind, els egipcis escrivien les fraccions com a sumes de fraccions unitàries (amb numerador 1). Per exemple, ${F(3, 4)} = ${F(1, 2)} + ${F(1, 4)}. Sabries escriure ${F(5, 6)} així?`,
+    `<b>Fracciones egipcias.</b> Hace unos 3.600 años, en el papiro de Rhind, los egipcios escribían las fracciones como sumas de fracciones unitarias (con numerador 1). Por ejemplo, ${F(3, 4)} = ${F(1, 2)} + ${F(1, 4)}. ¿Sabrías escribir ${F(5, 6)} así?`,
+    `<b>Egyptian fractions.</b> About 3,600 years ago, in the Rhind papyrus, Egyptians wrote fractions as sums of unit fractions (numerator 1). For example, ${F(3, 4)} = ${F(1, 2)} + ${F(1, 4)}. Can you write ${F(5, 6)} that way?`);
 })();

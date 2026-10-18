@@ -1,13 +1,44 @@
 // Temari de matemàtiques d'ESO, per cursos i blocs.
 // Per afegir una unitat nova: crea js/units/<curs>-<id>.js, afegeix-la a index.html i posa ready: true aquí.
+// Blocs = sentits dels sabers del Decret 175/2022 (Matemàtiques ESO)
 QM.blocks = {
-  num: { ca: 'Nombres', es: 'Números', en: 'Numbers', icon: 'π', color: 'var(--b-num)' },
-  alg: { ca: 'Àlgebra', es: 'Álgebra', en: 'Algebra', icon: 'x²', color: 'var(--b-alg)' },
-  geo: { ca: 'Geometria i mesura', es: 'Geometría y medida', en: 'Geometry and measurement', icon: '△', color: 'var(--b-geo)' },
-  fun: { ca: 'Funcions', es: 'Funciones', en: 'Functions', icon: 'f(x)', color: 'var(--b-fun)' },
-  est: { ca: 'Estadística i probabilitat', es: 'Estadística y probabilidad', en: 'Statistics and probability', icon: 'σ', color: 'var(--b-est)' },
+  num: { ca: 'Sentit numèric', es: 'Sentido numérico', en: 'Number sense', icon: 'π', color: 'var(--b-num)' },
+  alg: { ca: 'Sentit algebraic', es: 'Sentido algebraico', en: 'Algebraic sense', icon: 'x²', color: 'var(--b-alg)' },
+  geo: { ca: 'Sentit espacial i de la mesura', es: 'Sentido espacial y de la medida', en: 'Spatial and measurement sense', icon: '△', color: 'var(--b-geo)' },
+  fun: { ca: 'Sentit algebraic: relacions i funcions', es: 'Sentido algebraico: relaciones y funciones', en: 'Algebraic sense: relations and functions', icon: 'f(x)', color: 'var(--b-fun)' },
+  est: { ca: 'Sentit estocàstic', es: 'Sentido estocástico', en: 'Stochastic sense', icon: 'σ', color: 'var(--b-est)' },
 };
 
+// Competències específiques de Matemàtiques (Decret 175/2022). Títols abreujats.
+QM.CE = {
+  1: { ca: 'Interpretar, modelitzar i resoldre problemes', es: 'Interpretar, modelizar y resolver problemas', en: 'Interpret, model and solve problems' },
+  2: { ca: 'Analitzar i validar les solucions', es: 'Analizar y validar las soluciones', en: 'Analyse and check solutions' },
+  3: { ca: 'Formular i comprovar conjectures', es: 'Formular y comprobar conjeturas', en: 'Make and test conjectures' },
+  4: { ca: 'Pensament computacional', es: 'Pensamiento computacional', en: 'Computational thinking' },
+  5: { ca: 'Connexions entre elements matemàtics', es: 'Conexiones entre elementos matemáticos', en: 'Connections within mathematics' },
+  6: { ca: 'Matemàtiques en altres àmbits i en situacions reals', es: 'Matemáticas en otros ámbitos y en situaciones reales', en: 'Maths in other subjects and real situations' },
+  7: { ca: 'Representar i comunicar', es: 'Representar y comunicar', en: 'Represent and communicate' },
+  8: { ca: 'Destreses personals: gestió de les emocions', es: 'Destrezas personales: gestión de las emociones', en: 'Personal skills: managing emotions' },
+  9: { ca: 'Destreses socials: treball en equip', es: 'Destrezas sociales: trabajo en equipo', en: 'Social skills: teamwork' },
+};
+// Competències transversals i vectors del currículum (Decret 175/2022)
+QM.TRANSV = {
+  ciu: { ca: 'Competència ciutadana', es: 'Competencia ciudadana', en: 'Citizenship competence' },
+  emp: { ca: 'Competència emprenedora', es: 'Competencia emprendedora', en: 'Entrepreneurship competence' },
+  cpsaa: { ca: 'Competència personal, social i d\'aprendre a aprendre', es: 'Competencia personal, social y de aprender a aprender', en: 'Personal, social and learning-to-learn competence' },
+  dig: { ca: 'Competència digital', es: 'Competencia digital', en: 'Digital competence' },
+};
+QM.VECTORS = {
+  comp: { ca: 'Aprenentatges competencials', es: 'Aprendizajes competenciales', en: 'Competence-based learning' },
+  gen: { ca: 'Perspectiva de gènere', es: 'Perspectiva de género', en: 'Gender perspective' },
+  univ: { ca: 'Universalitat del currículum', es: 'Universalidad del currículo', en: 'Universal curriculum' },
+  ling: { ca: 'Qualitat de l\'educació de les llengües', es: 'Calidad de la educación de las lenguas', en: 'Quality language education' },
+  ciut: { ca: 'Ciutadania democràtica i consciència global', es: 'Ciudadanía democrática y conciencia global', en: 'Democratic citizenship and global awareness' },
+  ben: { ca: 'Benestar emocional', es: 'Bienestar emocional', en: 'Emotional wellbeing' },
+};
+
+// El Decret 175/2022 presenta els sabers de 1r a 3r junts i els de 4t a part.
+// La distribució per cursos d'aquesta web és una proposta de seqüenciació (cada centre la concreta).
 QM.courses = [
   { id: '1eso', ca: '1r ESO', es: '1º ESO', en: 'Year 1 ESO', n: '1r', units: [
     { id: 'divisibilitat', b: 'num', ca: 'Nombres naturals i divisibilitat', es: 'Números naturales y divisibilidad', en: 'Natural numbers and divisibility' },

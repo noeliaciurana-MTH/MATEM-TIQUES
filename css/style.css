@@ -227,6 +227,8 @@ svg .tk.big { font-size: 20px; fill: var(--ink); }
 svg .mk { fill: var(--red); }
 svg .okf { fill: var(--ok); }
 svg .cv { stroke: var(--pen); stroke-width: 2.5; fill: none; }
+svg .cv.cv2 { stroke: var(--b-fun); }
+svg .cv.cv3 { stroke: var(--b-geo); }
 svg .beam { stroke: var(--ink); stroke-width: 5; stroke-linecap: round; }
 svg .tri { fill: var(--pen-soft); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
 svg .ra, svg .ra2 { fill: none; stroke: var(--ink); stroke-width: 1.3; }
@@ -271,6 +273,8 @@ svg .lbl { font: italic 16px var(--f-math); fill: var(--ink); }
 .fb.ko { background: var(--red-soft); border-left: 4px solid var(--red); }
 .fb.ko > strong { color: var(--red); }
 .fb.hint { background: var(--pen-soft); border-left: 4px solid var(--pen); }
+.diag { background: var(--surface); border: 1px dashed var(--red); border-radius: 4px; padding: 8px 12px; font-weight: 700; }
+.diag span { display: block; font-family: var(--f-chalk); font-size: 1.35rem; font-weight: 700; color: var(--red); line-height: 1.1; }
 .fb.hint > strong { color: var(--pen); }
 .side { display: grid; gap: 12px; }
 .box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 8px; }
@@ -317,7 +321,53 @@ svg .lbl { font: italic 16px var(--f-math); fill: var(--ink); }
 .foot { border-top: 1px solid var(--line); background: var(--surface); font-size: 0.85rem; color: var(--ink-soft); }
 .foot .wrap { padding-block: 18px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: space-between; }
 
+/* Navegació secundària */
+.hlinks { display: flex; gap: 14px; font-size: 0.88rem; font-weight: 700; }
+.hlinks a { color: var(--ink-soft); text-decoration: none; border-bottom: 2px solid transparent; }
+.hlinks a:hover { color: var(--ink); border-color: var(--red); }
+.seqnote { margin: -12px 0 20px; font-size: 0.85rem; }
+
+/* Situació d'aprenentatge */
+.situation { gap: 18px; }
+.situation > * { max-width: 72ch; }
+.situation h2 { font-family: var(--f-chalk); font-size: 2.4rem; font-weight: 700; color: var(--pen); }
+.situation h3 { font-size: 1.2rem; }
+.lead2 { font-size: 1.08rem; }
+.tool { max-width: none !important; border: 2px solid var(--ink); border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 12px; background: var(--paper); }
+.tool label { font-weight: 700; display: block; }
+.tool input[type="range"] { display: block; width: 100%; max-width: 360px; accent-color: var(--pen); }
+.tool label.check { font-weight: 400; display: flex; gap: 8px; align-items: center; }
+.tool-grid { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 20px; align-items: start; }
+.rule.product { border-left-color: var(--ok); background: var(--ok-soft); }
+.rule.product .t { color: var(--ok); }
+.tbl { border-collapse: collapse; font-size: 0.95rem; min-width: 260px; }
+.tbl th, .tbl td { border-bottom: 1px solid var(--line); padding: 6px 12px; text-align: left; vertical-align: middle; }
+.tbl th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
+.tblwrap { overflow-x: auto; }
+
+/* Història */
+.hist { border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; background: var(--paper); max-width: 68ch; display: grid; gap: 6px; }
+.hist .t { font-family: var(--f-chalk); font-size: 1.5rem; font-weight: 700; color: var(--b-fun); line-height: 1; }
+
+/* Currículum */
+.curgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.curgrid ul { font-size: 0.95rem; }
+ul.ce { list-style: none; padding: 0; }
+ul.ce b { font-family: var(--f-math); color: var(--red); margin-right: 4px; }
+.mapu { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
+.mapu summary { cursor: pointer; }
+.mapu[open] summary { margin-bottom: 12px; }
+
+/* Pàgines d'informe i docent */
+.page { padding-block: 28px 56px; display: grid; gap: 16px; }
+.page h1 { font-family: var(--f-chalk); font-size: 3rem; font-weight: 700; }
+.page h2 { font-size: 1.4rem; margin-bottom: 8px; }
+.page > section { display: grid; gap: 10px; }
+.txt { font: inherit; padding: 8px 10px; border: 1.5px solid var(--line); border-radius: 4px; background: var(--paper); color: var(--ink); max-width: 360px; width: 100%; }
+.code { font: 0.85rem ui-monospace, Menlo, monospace; padding: 8px 10px; border: 1.5px solid var(--line); border-radius: 4px; background: var(--paper); color: var(--ink); width: 100%; resize: vertical; word-break: break-all; }
+
 @media (max-width: 860px) {
+  .curgrid, .tool-grid { grid-template-columns: minmax(0, 1fr); }
   .hero, .practice, .theory, .lab-grid { grid-template-columns: minmax(0, 1fr); }
   .notebook { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .notebook .badges { grid-column: 1 / -1; }
@@ -328,6 +378,7 @@ svg .lbl { font: italic 16px var(--f-math); fill: var(--ink); }
 }
 @media (max-width: 520px) {
   .score span.lbl { display: none; }
+  .hlinks { order: 5; width: 100%; }
   .course-btn { padding: 6px 10px 4px; }
   .course-btn b { font-size: 1.3rem; }
   .course-btn span { display: none; }

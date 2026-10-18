@@ -68,27 +68,46 @@ QM.line = (v, d, max = 3, w = 420) => {
   return s + '</svg>';
 };
 
-// Gràfica d'una funció f en uns eixos de coordenades, amb punts marcats a l'eix x
+// Gràfica d'una o diverses funcions (f pot ser una funció o una llista) amb punts marcats a l'eix x.
+// Opcions: xmin, xmax, ymin, ymax, w, h, gx/gy (cada quant hi ha línia de quadrícula), lx/ly (cada quant hi ha etiqueta), pts (punts [x, y] a marcar)
 QM.plot = (f, marks = [], o = {}) => {
+  const fs = Array.isArray(f) ? f : [f];
   const xmin = o.xmin ?? -8, xmax = o.xmax ?? 8, ymin = o.ymin ?? -10, ymax = o.ymax ?? 10;
-  const w = o.w ?? 440, h = o.h ?? 300, pad = 6;
+  const w = o.w ?? 440, h = o.h ?? 300, pad = 6, gx = o.gx ?? 1, gy = o.gy ?? 1, lx = o.lx ?? 2, ly = o.ly ?? 4;
   const X = (x) => pad + (x - xmin) / (xmax - xmin) * (w - 2 * pad);
   const Y = (y) => pad + (ymax - y) / (ymax - ymin) * (h - 2 * pad);
+  const num = (k) => (k < 0 ? '−' + (-k) : String(k));
   const id = 'clip' + Math.random().toString(36).slice(2, 8);
+  const ax0 = Math.min(Math.max(0, xmin), xmax), ay0 = Math.min(Math.max(0, ymin), ymax);
   let s = `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="plot">
     <defs><clipPath id="${id}"><rect x="${pad}" y="${pad}" width="${w - 2 * pad}" height="${h - 2 * pad}"/></clipPath></defs>
     <rect x="${pad}" y="${pad}" width="${w - 2 * pad}" height="${h - 2 * pad}" class="em"/>`;
-  for (let x = Math.ceil(xmin); x <= xmax; x++) s += `<line x1="${X(x)}" y1="${pad}" x2="${X(x)}" y2="${h - pad}" class="gr"/>`;
-  for (let y = Math.ceil(ymin); y <= ymax; y++) s += `<line x1="${pad}" y1="${Y(y)}" x2="${w - pad}" y2="${Y(y)}" class="gr"/>`;
-  s += `<line x1="${pad}" y1="${Y(0)}" x2="${w - pad}" y2="${Y(0)}" class="ax"/><line x1="${X(0)}" y1="${pad}" x2="${X(0)}" y2="${h - pad}" class="ax"/>`;
-  for (let x = Math.ceil(xmin) + 1; x < xmax; x += 2) if (x) s += `<text x="${X(x)}" y="${Y(0) + 14}" text-anchor="middle" class="tk">${x < 0 ? '−' + (-x) : x}</text>`;
-  for (let y = Math.ceil(ymin) + 2; y < ymax; y += 4) if (y) s += `<text x="${X(0) - 5}" y="${Y(y) + 4}" text-anchor="end" class="tk">${y < 0 ? '−' + (-y) : y}</text>`;
-  let d = '';
-  for (let i = 0; i <= 400; i++) {
-    const x = xmin + (xmax - xmin) * i / 400, y = Math.max(ymin - 50, Math.min(ymax + 50, f(x)));
-    d += (i ? 'L' : 'M') + X(x).toFixed(1) + ',' + Y(y).toFixed(1);
-  }
-  s += `<path d="${d}" class="cv" clip-path="url(#${id})"/>`;
+  for (let x = Math.ceil(xmin / gx) * gx; x <= xmax; x += gx) s += `<line x1="${X(x)}" y1="${pad}" x2="${X(x)}" y2="${h - pad}" class="gr"/>`;
+  for (let y = Math.ceil(ymin / gy) * gy; y <= ymax; y += gy) s += `<line x1="${pad}" y1="${Y(y)}" x2="${w - pad}" y2="${Y(y)}" class="gr"/>`;
+  s += `<line x1="${pad}" y1="${Y(ay0)}" x2="${w - pad}" y2="${Y(ay0)}" class="ax"/><line x1="${X(ax0)}" y1="${pad}" x2="${X(ax0)}" y2="${h - pad}" class="ax"/>`;
+  for (let x = Math.ceil((xmin + 1e-9) / lx) * lx; x < xmax; x += lx) if (x !== ax0) s += `<text x="${X(x)}" y="${Math.min(h - 4, Y(ay0) + 14)}" text-anchor="middle" class="tk">${num(x)}</text>`;
+  for (let y = Math.ceil((ymin + 1e-9) / ly) * ly; y < ymax; y += ly) if (y !== ay0) s += `<text x="${Math.max(30, X(ax0) - 5)}" y="${Y(y) + 4}" text-anchor="end" class="tk">${num(y)}</text>`;
+  fs.forEach((fn, k) => {
+    let d = '';
+    for (let i = 0; i <= 400; i++) {
+      const x = xmin + (xmax - xmin) * i / 400, y = Math.max(ymin - 50 * (ymax - ymin), Math.min(ymax + 50 * (ymax - ymin), fn(x)));
+      d += (i ? 'L' : 'M') + X(x).toFixed(1) + ',' + Y(y).toFixed(1);
+    }
+    s += `<path d="${d}" class="cv${k ? ' cv' + (k + 1) : ''}" clip-path="url(#${id})"/>`;
+  });
   marks.forEach((m) => { if (m >= xmin && m <= xmax) s += `<circle cx="${X(m)}" cy="${Y(0)}" r="6" class="mk"/>`; });
+  (o.pts || []).forEach(([px, py]) => { if (px >= xmin && px <= xmax && py >= ymin && py <= ymax) s += `<circle cx="${X(px)}" cy="${Y(py)}" r="6" class="mk"/>`; });
   return s + '</svg>';
 };
+
+// Diagnòstic d'errors freqüents. rules: [[prova, 'català', 'castellà', 'English'], ...]
+// Retorna una funció que, donada una resposta incorrecta, diu quin error típic s'ha fet (o null).
+QM.diag = (L, rules) => (ans) => {
+  for (const [test, ca, es, en] of rules) {
+    let hit = false; try { hit = !!test(ans); } catch (e) { hit = false; }
+    if (hit) return { msg: QM.T(L, ca, es, en), key: ca };
+  }
+  return null;
+};
+QM.fe = (a, n, d) => a && a.d !== 0 && d !== 0 && a.n * d === n * a.d;
+QM.ap = (r, v) => Number.isFinite(v) && Math.abs(r - v) < 0.011;

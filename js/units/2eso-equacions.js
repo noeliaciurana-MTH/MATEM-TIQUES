@@ -108,11 +108,18 @@
       const a = nz(-12, 12), b = x + a;
       return { q: `<p>${SOLVE(L)}</p><div class="calc">${X}${sc(a)} = ${n(b)}</div>`, kind: 'num', check: (r) => r === x,
         hint: T(L, `Passa el ${n(a)} a l'altre membre canviant-li el signe.`, `Pasa el ${n(a)} al otro miembro cambiándole el signo.`, `Move the ${n(a)} to the other side and change its sign.`),
-        sol: `<div class="calc">${X} = ${n(b)}${sc(-a)} = ${n(x)}</div>` };
+        diagnose: QM.diag(L, [
+        [(r) => r === b + a, `Quan passes un terme a l'altre membre, ha de canviar de signe.`, `Cuando pasas un término al otro miembro, tiene que cambiar de signo.`, `When you move a term to the other side, its sign changes.`],
+        [(r) => r === -x && x !== 0, `Gairebé! Revisa el signe de la solució.`, `¡Casi! Revisa el signo de la solución.`, `Almost! Check the sign of your answer.`],]),
+      sol: `<div class="calc">${X} = ${n(b)}${sc(-a)} = ${n(x)}</div>` };
     }
     const a = pick([2, 3, 4, 5, 6, 7, 8, 9, -2, -3, -4, -5]), b = a * x;
     return { q: `<p>${SOLVE(L)}</p><div class="calc">${cx(a)} = ${n(b)}</div>`, kind: 'num', check: (r) => r === x,
       hint: T(L, `El ${n(a)} multiplica: passa a l'altre membre dividint.`, `El ${n(a)} multiplica: pasa al otro miembro dividiendo.`, `The ${n(a)} is multiplying: move it across by dividing.`),
+      diagnose: QM.diag(L, [
+        [(r) => r === b - a, `El nombre que multiplica la x passa dividint, no restant.`, `El número que multiplica a la x pasa dividiendo, no restando.`, `The number multiplying x moves across by dividing, not subtracting.`],
+        [(r) => r === b * a, `El nombre que multiplica la x passa dividint, no multiplicant.`, `El número que multiplica a la x pasa dividiendo, no multiplicando.`, `The number multiplying x moves across by dividing, not multiplying.`],
+        [(r) => r === -x && x !== 0, `Gairebé! Revisa el signe de la solució.`, `¡Casi! Revisa el signo de la solución.`, `Almost! Check the sign of your answer.`],]),
       sol: `<div class="calc">${X} = ${F(n(b), n(a))} = ${n(x)}</div>` };
   }
 
@@ -120,6 +127,10 @@
     const x = nz(-9, 9), a = pick([2, 3, 4, 5, 6, 7]), b = nz(-15, 15), c = a * x + b;
     return { q: `<p>${SOLVE(L)}</p><div class="calc">${cx(a)}${sc(b)} = ${n(c)}</div>`, kind: 'num', check: (r) => r === x,
       hint: T(L, 'Primer passa el nombre que suma o resta; després divideix.', 'Primero pasa el número que suma o resta; después divide.', 'First move the number being added or subtracted; then divide.'),
+      diagnose: QM.diag(L, [
+        [(r) => QM.ap(r, (c + b) / a), `En passar el nombre a l'altre membre, ha de canviar de signe.`, `Al pasar el número al otro miembro, tiene que cambiar de signo.`, `When you move the number across, its sign changes.`],
+        [(r) => QM.ap(r, c / a - b), `Primer passa el terme que suma o resta, i després divideix.`, `Primero pasa el término que suma o resta, y después divide.`, `First move the term being added or subtracted, then divide.`],
+        [(r) => r === -x && x !== 0, `Gairebé! Revisa el signe de la solució.`, `¡Casi! Revisa el signo de la solución.`, `Almost! Check the sign of your answer.`],]),
       sol: `<div class="calc">${cx(a)} = ${n(c)}${sc(-b)} = ${n(c - b)} &nbsp;→&nbsp; ${X} = ${F(n(c - b), a)} = ${n(x)}</div>` };
   }
 
@@ -130,6 +141,10 @@
                          `I think of a number, multiply it by ${a} and add ${b}. I get ${c}. What was my number?`)}</p>`,
       kind: 'num', check: (r) => r === x,
       hint: T(L, `Escriu l'equació: ${a}${X} + ${b} = ${c}.`, `Escribe la ecuación: ${a}${X} + ${b} = ${c}.`, `Write the equation: ${a}${X} + ${b} = ${c}.`),
+      diagnose: QM.diag(L, [
+        [(r) => QM.ap(r, (c + b) / a), `Has sumat el nombre en lloc de restar-lo.`, `Has sumado el número en lugar de restarlo.`, `You added the number instead of subtracting it.`],
+        [(r) => QM.ap(r, c / a - b), `Primer resta, i després divideix.`, `Primero resta, y después divide.`, `Subtract first, then divide.`],
+      ]),
       sol: `<div class="calc">${a}${X} + ${b} = ${c} → ${a}${X} = ${c - b} → ${X} = ${x}</div>` };
   }
 
@@ -138,6 +153,10 @@
     const b = nz(-12, 12), d = (a - c) * x + b;
     return { q: `<p>${SOLVE(L)}</p><div class="calc">${cx(a)}${sc(b)} = ${cx(c)}${sc(d)}</div>`, kind: 'num', check: (r) => r === x,
       hint: T(L, `Agrupa les ${X} a l'esquerra i els nombres a la dreta.`, `Agrupa las ${X} a la izquierda y los números a la derecha.`, `Collect the ${X} terms on the left and the numbers on the right.`),
+      diagnose: QM.diag(L, [
+        [(r) => QM.ap(r, (d - b) / (a + c)), `En passar el terme en x a l'altre membre, també canvia de signe.`, `Al pasar el término en x al otro miembro, también cambia de signo.`, `When you move the x term across, its sign changes too.`],
+        [(r) => QM.ap(r, (d + b) / (a - c)), `En passar el nombre a l'altre membre, canvia de signe.`, `Al pasar el número al otro miembro, cambia de signo.`, `When you move the number across, its sign changes.`],
+        [(r) => r === -x && x !== 0, `Gairebé! Revisa el signe de la solució.`, `¡Casi! Revisa el signo de la solución.`, `Almost! Check the sign of your answer.`],]),
       sol: `<div class="calc">${cx(a)}${sx(-c)} = ${n(d)}${sc(-b)}</div><div class="calc">${cx(a - c)} = ${n(d - b)} → ${X} = ${n(x)}</div>` };
   }
 
@@ -148,6 +167,9 @@
     const inner = `${X}${sc(b)}`;
     return { q: `<p>${SOLVE(L)}</p><div class="calc">${n(a)}(${inner})${sc(c)} = ${cx(d)}${sc(e)}</div>`, kind: 'num', check: (r) => r === x,
       hint: T(L, `Primer multiplica el ${n(a)} per cada terme del parèntesi.`, `Primero multiplica el ${n(a)} por cada término del paréntesis.`, `First multiply ${n(a)} by each term inside the brackets.`),
+      diagnose: QM.diag(L, [
+        [(r) => QM.ap(r, (e - b - c) / (a - d)), `El nombre de fora del parèntesi multiplica tots els termes de dins.`, `El número de fuera del paréntesis multiplica todos los términos de dentro.`, `The number outside the brackets multiplies every term inside.`],
+        [(r) => r === -x && x !== 0, `Gairebé! Revisa el signe de la solució.`, `¡Casi! Revisa el signo de la solución.`, `Almost! Check the sign of your answer.`],]),
       sol: `<div class="calc">${cx(a)}${sc(a * b)}${sc(c)} = ${cx(d)}${sc(e)}</div><div class="calc">${cx(a - d)} = ${n(e - a * b - c)} → ${X} = ${n(x)}</div>` };
   }
 
@@ -157,11 +179,19 @@
       const r = rnd(1, 10), a = pick([1, 1, 2, 3, 4]), c = a * r * r;
       return { q: `<p>${SOLVE2(L)}</p><div class="calc">${cx(a, X2)} − ${c} = 0</div>`, kind: 'nums', check: pair(r, -r),
         hint: T(L, `Aïlla ${X2} i fes l'arrel quadrada. No t'oblidis del signe ±.`, `Despeja ${X2} y haz la raíz cuadrada. No olvides el signo ±.`, `Isolate ${X2} and take the square root. Don't forget ±.`),
-        sol: `<div class="calc">${X2} = ${F(c, a)} = ${r * r} → ${X} = ±${r}</div>` };
+        diagnose: QM.diag(L, [
+        [(p) => [p.x1, p.x2].includes(r) !== [p.x1, p.x2].includes(-r), `Hi ha dues solucions: una positiva i una negativa (±).`, `Hay dos soluciones: una positiva y una negativa (±).`, `There are two solutions: one positive and one negative (±).`],
+        [(p) => [p.x1, p.x2].includes(r * r), `Recorda fer l'arrel quadrada al final.`, `Recuerda hacer la raíz cuadrada al final.`, `Remember to take the square root at the end.`],
+      ]),
+      sol: `<div class="calc">${X2} = ${F(c, a)} = ${r * r} → ${X} = ±${r}</div>` };
     }
     const a = pick([1, 1, 2, 3]), r = nz(-9, 9), b = -a * r;
     return { q: `<p>${SOLVE2(L)}</p><div class="calc">${cx(a, X2)}${sx(b)} = 0</div>`, kind: 'nums', check: pair(0, r),
       hint: T(L, `Treu ${X} factor comú.`, `Saca ${X} factor común.`, `Factor out ${X}.`),
+      diagnose: QM.diag(L, [
+        [(p) => p.x1 !== 0 && p.x2 !== 0, `Has perdut la solució x = 0. Treu factor comú en lloc de dividir per x.`, `Has perdido la solución x = 0. Saca factor común en lugar de dividir por x.`, `You lost the solution x = 0. Factorise instead of dividing by x.`],
+        [(p) => [p.x1, p.x2].includes(-r), `Revisa el signe de la segona solució.`, `Revisa el signo de la segunda solución.`, `Check the sign of the second solution.`],
+      ]),
       sol: `<div class="calc">${X}(${cx(a)}${sc(b)}) = 0 → ${X} = 0, ${X} = ${n(r)}</div>` };
   }
 
@@ -171,7 +201,10 @@
       const m = lcm(a, b), x = m * nz(-4, 5), c = x / a + x / b;
       return { q: `<p>${SOLVE(L)}</p><div class="calc">${F(X, a)} ${op('+')} ${F(X, b)} = ${n(c)}</div>`, kind: 'num', check: (r) => r === x,
         hint: T(L, `Multiplica tots els termes per ${m}, el m.c.m. de ${a} i ${b}.`, `Multiplica todos los términos por ${m}, el m.c.m. de ${a} y ${b}.`, `Multiply every term by ${m}, the LCM of ${a} and ${b}.`),
-        sol: `<div class="calc">${cx(m / a)} + ${cx(m / b)} = ${n(c * m)} → ${cx(m / a + m / b)} = ${n(c * m)} → ${X} = ${n(x)}</div>` };
+        diagnose: QM.diag(L, [
+        [(r) => QM.ap(r, c / (m / a + m / b)), `Quan treus denominadors, multiplica TOTS els termes pel m.c.m., també el del segon membre.`, `Al quitar denominadores, multiplica TODOS los términos por el m.c.m., también el del segundo miembro.`, `When clearing denominators, multiply EVERY term by the LCM, including the right-hand side.`],
+        [(r) => r === -x && x !== 0, `Gairebé! Revisa el signe de la solució.`, `¡Casi! Revisa el signo de la solución.`, `Almost! Check the sign of your answer.`],]),
+      sol: `<div class="calc">${cx(m / a)} + ${cx(m / b)} = ${n(c * m)} → ${cx(m / a + m / b)} = ${n(c * m)} → ${X} = ${n(x)}</div>` };
     }
     let a, b; do { a = rnd(2, 5); b = rnd(2, 5); } while (a === b);
     const p = nz(-5, 5), q = nz(-5, 5), m = lcm(a, b);
@@ -180,6 +213,9 @@
     const x = (a * q - b * p) / (b - a);
     return { q: `<p>${SOLVE(L)}</p><div class="calc">${F(X + sc(p), a)} = ${F(X + sc(q), b)}</div>`, kind: 'num', check: (r) => r === x,
       hint: T(L, 'Quan només hi ha una fracció a cada costat, pots multiplicar en creu.', 'Cuando solo hay una fracción a cada lado, puedes multiplicar en cruz.', 'With just one fraction on each side, you can cross multiply.'),
+      diagnose: QM.diag(L, [
+        [(r) => QM.ap(r, (q - p) / (b - a)), `En multiplicar en creu, el nombre multiplica tot el parèntesi.`, `Al multiplicar en cruz, el número multiplica todo el paréntesis.`, `When cross multiplying, the number multiplies the whole bracket.`],
+        [(r) => r === -x && x !== 0, `Gairebé! Revisa el signe de la solució.`, `¡Casi! Revisa el signo de la solución.`, `Almost! Check the sign of your answer.`],]),
       sol: `<div class="calc">${b}(${X}${sc(p)}) = ${a}(${X}${sc(q)}) → ${cx(b)}${sc(b * p)} = ${cx(a)}${sc(a * q)}</div><div class="calc">${cx(b - a)} = ${n(a * q - b * p)} → ${X} = ${n(x)}</div>` };
   }
 
@@ -188,6 +224,10 @@
     const a = pick([1, 1, 1, 2]), b = -a * (r1 + r2), c = a * r1 * r2, D = b * b - 4 * a * c, sq = Math.round(Math.sqrt(D));
     return { q: `<p>${SOLVE2(L)}</p><div class="calc">${cx(a, X2)}${sx(b)}${sc(c)} = 0</div>`, kind: 'nums', check: pair(r1, r2),
       hint: T(L, `Fes servir la fórmula amb ${v('a')} = ${a}, ${v('b')} = ${n(b)}, ${v('c')} = ${n(c)}. Comença calculant Δ.`, `Usa la fórmula con ${v('a')} = ${a}, ${v('b')} = ${n(b)}, ${v('c')} = ${n(c)}. Empieza calculando Δ.`, `Use the formula with ${v('a')} = ${a}, ${v('b')} = ${n(b)}, ${v('c')} = ${n(c)}. Start by working out Δ.`),
+      diagnose: QM.diag(L, [
+        [(p) => pair(-r1, -r2)(p), `Les dues solucions tenen el signe canviat. Recorda que la fórmula comença amb −b.`, `Las dos soluciones tienen el signo cambiado. Recuerda que la fórmula empieza con −b.`, `Both solutions have the wrong sign. Remember the formula starts with −b.`],
+        [(p) => pair(2 * r1, 2 * r2)(p) || (a > 1 && pair(a * r1, a * r2)(p)), `Revisa el denominador: cal dividir entre 2a = ${2 * a}.`, `Revisa el denominador: hay que dividir entre 2a = ${2 * a}.`, `Check the denominator: divide by 2a = ${2 * a}.`],
+      ]),
       sol: `<div class="calc">Δ = (${n(b)})<sup>2</sup> − 4 · ${a} · (${n(c)}) = ${D}</div>
             <div class="calc">${X} = ${F(`${n(-b)} ± ${sq}`, 2 * a)} → ${X}<sub>1</sub> = ${n(Math.max(r1, r2))}, ${X}<sub>2</sub> = ${n(Math.min(r1, r2))}</div>` };
   }
@@ -201,14 +241,20 @@
                              `A mother is ${m} and her daughter is ${f}. In how many years will the mother be twice as old as her daughter?`)}</p>`,
         kind: 'num', check: (r) => r === x,
         hint: T(L, `D'aquí a ${X} anys: ${m} + ${X} = 2(${f} + ${X}).`, `Dentro de ${X} años: ${m} + ${X} = 2(${f} + ${X}).`, `In ${X} years: ${m} + ${X} = 2(${f} + ${X}).`),
-        sol: `<div class="calc">${m} + ${X} = ${2 * f} + 2${X} → ${X} = ${m - 2 * f}</div>` };
+        diagnose: QM.diag(L, [
+        [(r) => r === m - f, `Fixa't que d'aquí a x anys les dues persones hauran fet x anys més.`, `Fíjate en que dentro de x años las dos personas tendrán x años más.`, `Notice that in x years both people will be x years older.`],
+      ]),
+      sol: `<div class="calc">${m} + ${X} = ${2 * f} + 2${X} → ${X} = ${m - 2 * f}</div>` };
     }
     if (t === 'consec') {
       const x = rnd(5, 60), S = 3 * x + 3;
       return { q: `<p>${T(L, `La suma de tres nombres consecutius és ${S}. Quin és el més petit?`, `La suma de tres números consecutivos es ${S}. ¿Cuál es el menor?`, `Three consecutive numbers add up to ${S}. What is the smallest?`)}</p>`,
         kind: 'num', check: (r) => r === x,
         hint: T(L, `Anomena'ls ${X}, ${X} + 1 i ${X} + 2.`, `Llámalos ${X}, ${X} + 1 y ${X} + 2.`, `Call them ${X}, ${X} + 1 and ${X} + 2.`),
-        sol: `<div class="calc">3${X} + 3 = ${S} → 3${X} = ${S - 3} → ${X} = ${x}</div>` };
+        diagnose: QM.diag(L, [
+        [(r) => QM.ap(r, S / 3), `Aquest és el nombre del mig. Recorda que són x, x + 1 i x + 2.`, `Ese es el número del medio. Recuerda que son x, x + 1 y x + 2.`, `That's the middle number. Remember they are x, x + 1 and x + 2.`],
+      ]),
+      sol: `<div class="calc">3${X} + 3 = ${S} → 3${X} = ${S - 3} → ${X} = ${x}</div>` };
     }
     if (t === 'rect') {
       const x = rnd(3, 20), w = rnd(2, 12), P = 2 * (2 * x + w);
@@ -217,12 +263,19 @@
                              `A rectangle is ${w} cm longer than it is wide, and its perimeter is ${P} cm. How wide is it, in cm?`)}</p>`,
         kind: 'num', check: (r) => r === x,
         hint: T(L, `Amplada ${X}, llargada ${X} + ${w}. El perímetre és la suma dels quatre costats.`, `Ancho ${X}, largo ${X} + ${w}. El perímetro es la suma de los cuatro lados.`, `Width ${X}, length ${X} + ${w}. The perimeter is the sum of all four sides.`),
-        sol: `<div class="calc">2${X} + 2(${X} + ${w}) = ${P} → 4${X} = ${P - 2 * w} → ${X} = ${x}</div>` };
+        diagnose: QM.diag(L, [
+        [(r) => QM.ap(r, P / 4), `Això seria un quadrat. La llargada és x + ${w}, no x.`, `Eso sería un cuadrado. El largo es x + ${w}, no x.`, `That would be a square. The length is x + ${w}, not x.`],
+        [(r) => QM.ap(r, (P - w) / 4), `La llargada surt dues vegades al perímetre: 2(x + ${w}).`, `El largo aparece dos veces en el perímetro: 2(x + ${w}).`, `The length appears twice in the perimeter: 2(x + ${w}).`],
+      ]),
+      sol: `<div class="calc">2${X} + 2(${X} + ${w}) = ${P} → 4${X} = ${P - 2 * w} → ${X} = ${x}</div>` };
     }
     const x = rnd(3, 25), N = x * (x + 1);
     return { q: `<p>${T(L, `El producte de dos nombres naturals consecutius és ${N}. Quin és el més petit?`, `El producto de dos números naturales consecutivos es ${N}. ¿Cuál es el menor?`, `The product of two consecutive natural numbers is ${N}. What is the smaller one?`)}</p>`,
       kind: 'num', check: (r) => r === x,
       hint: T(L, `${X}(${X} + 1) = ${N} és una equació de segon grau.`, `${X}(${X} + 1) = ${N} es una ecuación de segundo grado.`, `${X}(${X} + 1) = ${N} is a quadratic equation.`),
+      diagnose: QM.diag(L, [
+        [(r) => r === x + 1, `Aquest és el més gran dels dos.`, `Ese es el mayor de los dos.`, `That's the bigger of the two.`],
+      ]),
       sol: `<div class="calc">${X2} + ${X} − ${N} = 0 → ${X} = ${F(`−1 ± ${2 * x + 1}`, 2)} → ${X} = ${x} ${T(L, '(l\'altra és negativa)', '(la otra es negativa)', '(the other is negative)')}</div>` };
   }
 
@@ -321,4 +374,78 @@
       3: [withDen, complete, wordProblem],
     },
   };
+})();
+
+// ---------- CURRÍCULUM, SITUACIÓ D'APRENENTATGE I HISTÒRIA ----------
+(function () {
+  const { F, T, v } = QM;
+  const X = v('x');
+  const U = QM.units['2eso-equacions'];
+  U.cur = {
+    ce: [1, 2, 3, 5, 6, 7, 9],
+    sabers: [
+      'Sentit algebraic. Igualtat i desigualtat: «Ús de l’àlgebra simbòlica per representar relacions lineals i quadràtiques en situacions contextualitzades».',
+      'Sentit algebraic. Igualtat i desigualtat: «Cerca de solucions en equacions o sistemes lineals i equacions quadràtiques».',
+    ],
+    transv: ['emp', 'cpsaa', 'dig', 'ciu'],
+    vectors: ['comp', 'gen', 'univ', 'ling', 'ciut'],
+    ods: [12],
+  };
+  U.situation = (L) => ({
+    title: T(L, 'El viatge de final de curs', 'El viaje de fin de curso', 'The end-of-year trip'),
+    html: `
+      <p class="lead2">${T(L,
+        'El grup organitza el viatge de final de curs i heu demanat pressupost a dues empreses d\'autocars. L\'empresa A cobra una quantitat fixa més poc per alumne; l\'empresa B, una quantitat fixa més petita però més per alumne. Encara no sabeu quants alumnes s\'hi apuntaran.',
+        'El grupo organiza el viaje de fin de curso y habéis pedido presupuesto a dos empresas de autocares. La empresa A cobra una cantidad fija más poco por alumno; la empresa B, una cantidad fija menor pero más por alumno. Todavía no sabéis cuántos alumnos se apuntarán.',
+        'Your group is organising the end-of-year trip and you have quotes from two coach companies. Company A charges a fixed amount plus a little per student; company B charges a smaller fixed amount but more per student. You don\'t know yet how many students will sign up.')}</p>
+      <div class="rule"><span class="t">${T(L, 'Pregunta motriu', 'Pregunta motriz', 'Driving question')}</span>
+        ${T(L, 'A partir de quants alumnes surt més a compte cada empresa? Quina recomanació fareu a l\'AMPA?', '¿A partir de cuántos alumnos sale más a cuenta cada empresa? ¿Qué recomendación haréis al AMPA?', 'From how many students is each company the better deal? What will you recommend to the parents\' association?')}</div>
+      <h3>${T(L, 'Què fareu', 'Qué haréis', 'What you will do')}</h3>
+      <ol>
+        <li>${T(L, `Escriviu el preu de cada empresa com una expressió amb ${X} = nombre d'alumnes.`, `Escribid el precio de cada empresa como una expresión con ${X} = número de alumnos.`, `Write each company's price as an expression with ${X} = number of students.`)}</li>
+        <li>${T(L, `Igualeu les dues expressions i resoleu l'equació. Què vol dir la solució?`, `Igualad las dos expresiones y resolved la ecuación. ¿Qué significa la solución?`, `Set the two expressions equal and solve. What does the solution mean?`)}</li>
+        <li>${T(L, 'Comproveu-ho amb la gràfica de sota: on es tallen les dues rectes?', 'Comprobadlo con la gráfica de abajo: ¿dónde se cortan las dos rectas?', 'Check with the graph below: where do the two lines cross?')}</li>
+        <li>${T(L, `Repte extra: la pancarta del viatge ha de fer 12 m² i ha de ser 1 m més llarga que ampla. Quines mides té? (${X}(${X} + 1) = 12)`, `Reto extra: la pancarta del viaje tiene que medir 12 m² y ser 1 m más larga que ancha. ¿Qué medidas tiene? (${X}(${X} + 1) = 12)`, `Extra challenge: the trip banner must be 12 m² and 1 m longer than it is wide. What are its dimensions? (${X}(${X} + 1) = 12)`)}</li>
+      </ol>
+      <div class="tool">
+        <h3>${T(L, 'Compara els pressupostos', 'Compara los presupuestos', 'Compare the quotes')}</h3>
+        <div class="tool-grid">
+          <div class="ctrl">
+            <label for="bus-af">A: ${T(L, 'fix', 'fijo', 'fixed')} (€) <output id="bus-afo"></output><input type="range" id="bus-af" min="0" max="600" step="20" value="300"></label>
+            <label for="bus-ap">A: ${T(L, 'per alumne', 'por alumno', 'per student')} (€) <output id="bus-apo"></output><input type="range" id="bus-ap" min="0" max="40" value="12"></label>
+            <label for="bus-bf">B: ${T(L, 'fix', 'fijo', 'fixed')} (€) <output id="bus-bfo"></output><input type="range" id="bus-bf" min="0" max="600" step="20" value="180"></label>
+            <label for="bus-bp">B: ${T(L, 'per alumne', 'por alumno', 'per student')} (€) <output id="bus-bpo"></output><input type="range" id="bus-bp" min="0" max="40" value="18"></label>
+          </div>
+          <div class="viz"><div class="calc" id="bus-eq"></div><div id="bus-plot"></div><p id="bus-res" class="good"></p></div>
+        </div>
+      </div>
+      <div class="rule product"><span class="t">${T(L, 'Producte final', 'Producto final', 'Final product')}</span>
+        ${T(L, 'Un informe breu per a l\'AMPA amb les equacions, la gràfica i una recomanació argumentada segons el nombre d\'alumnes.', 'Un informe breve para el AMPA con las ecuaciones, la gráfica y una recomendación argumentada según el número de alumnos.', 'A short report for the parents\' association with the equations, the graph and a reasoned recommendation depending on the number of students.')}</div>
+      <p class="muted">${T(L, 'Connexió amb l\'ODS 12: consum responsable i presa de decisions informades.', 'Conexión con el ODS 12: consumo responsable y toma de decisiones informadas.', 'Link to SDG 12: responsible consumption and informed decisions.')}</p>`,
+    init(root) {
+      const $ = (id) => root.querySelector('#' + id);
+      const draw = () => {
+        const af = +$('bus-af').value, ap = +$('bus-ap').value, bf = +$('bus-bf').value, bp = +$('bus-bp').value;
+        $('bus-afo').textContent = af; $('bus-apo').textContent = ap; $('bus-bfo').textContent = bf; $('bus-bpo').textContent = bp;
+        $('bus-eq').innerHTML = `${af} + ${ap}${X} = ${bf} + ${bp}${X}`;
+        const pts = []; let msg;
+        if (ap === bp) msg = af === bf ? T(L, 'Les dues empreses costen sempre el mateix.', 'Las dos empresas cuestan siempre lo mismo.', 'Both companies always cost the same.') : T(L, 'Les rectes són paral·leles: una empresa és sempre més barata.', 'Las rectas son paralelas: una empresa es siempre más barata.', 'The lines are parallel: one company is always cheaper.');
+        else {
+          const x = (bf - af) / (ap - bp), y = af + ap * x;
+          if (x > 0) {
+            pts.push([x, y]);
+            const xr = Math.round(x * 100) / 100, cheapAfter = ap < bp ? 'A' : 'B', cheapBefore = cheapAfter === 'A' ? 'B' : 'A';
+            msg = T(L, `Costen igual amb ${xr} alumnes. Amb menys, surt més a compte l'empresa ${cheapBefore}; amb més, la ${cheapAfter}.`, `Cuestan lo mismo con ${xr} alumnos. Con menos, sale más a cuenta la empresa ${cheapBefore}; con más, la ${cheapAfter}.`, `They cost the same with ${xr} students. With fewer, company ${cheapBefore} is cheaper; with more, company ${cheapAfter}.`);
+          } else msg = T(L, 'No es tallen amb un nombre positiu d\'alumnes: una empresa és sempre més barata.', 'No se cortan con un número positivo de alumnos: una empresa es siempre más barata.', 'They don\'t cross at a positive number of students: one company is always cheaper.');
+        }
+        $('bus-plot').innerHTML = QM.plot([(x) => af + ap * x, (x) => bf + bp * x], [], { xmin: 0, xmax: 40, ymin: 0, ymax: 1600, gx: 5, gy: 200, lx: 10, ly: 400, w: 420, h: 280, pts });
+        $('bus-res').textContent = msg;
+      };
+      ['bus-af', 'bus-ap', 'bus-bf', 'bus-bp'].forEach((id) => $(id).addEventListener('input', draw)); draw();
+    },
+  });
+  U.history = (L) => T(L,
+    '<b>Hipàtia d\'Alexandria</b> (segle IV) va ser matemàtica, astrònoma i mestra. Va escriure comentaris a l\'<i>Aritmètica</i> de Diofant, el llibre on apareixen moltes de les primeres equacions. El nom «àlgebra» ve del llibre d\'<b>al-Khwarizmi</b> (segle IX), que explicava com resoldre equacions de segon grau completant quadrats.',
+    '<b>Hipatia de Alejandría</b> (siglo IV) fue matemática, astrónoma y maestra. Escribió comentarios a la <i>Aritmética</i> de Diofanto, el libro donde aparecen muchas de las primeras ecuaciones. El nombre «álgebra» viene del libro de <b>al-Juarismi</b> (siglo IX), que explicaba cómo resolver ecuaciones de segundo grado completando cuadrados.',
+    '<b>Hypatia of Alexandria</b> (4th century) was a mathematician, astronomer and teacher. She wrote commentaries on Diophantus\' <i>Arithmetica</i>, the book where many of the first equations appear. The word "algebra" comes from the book by <b>al-Khwarizmi</b> (9th century), who explained how to solve quadratic equations by completing the square.');
 })();

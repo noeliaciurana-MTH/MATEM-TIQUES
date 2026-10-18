@@ -3,10 +3,14 @@
 Web de matemàtiques d'ESO (1r a 4t) en català, castellà i anglès. HTML, CSS i JavaScript sense instal·lar res: obre `index.html` al navegador.
 
 ## Què té cada unitat
+- **Situació real**: situació d'aprenentatge amb pregunta motriu, passos, eina interactiva i producte final (connectada amb els ODS).
 - **Teoria**: explicacions curtes amb exemples, dibuixos i errors freqüents.
 - **Explora**: laboratoris interactius per experimentar (p. ex. la mateixa fracció en barra, pastís, recta i decimal).
-- **Practica**: exercicis generats a l'atzar en 3 nivells (Bàsic, Mitjà, Avançat), amb correcció immediata, pistes i solució pas a pas.
+- **Practica**: exercicis generats a l'atzar en 3 nivells (Bàsic, Mitjà, Avançat), amb correcció immediata, **diagnòstic de l'error típic**, pistes i solució pas a pas.
 - **Repte**: 10 preguntes de dificultat creixent amb cronòmetre i medalles (or, plata, bronze).
+- **Currículum**: competències específiques, sabers, competències transversals i vectors del Decret 175/2022.
+
+A més: **El meu informe** (l'alumne genera un codi amb el seu progrés i els seus errors freqüents) i **Per al docent** (enganxes els codis del grup i veus els errors més comuns i el mapa curricular).
 
 Punts, ratxes i medalles es guarden al navegador de cada alumne (no cal registre).
 
@@ -36,3 +40,6 @@ js/app.js             navegació, idiomes, pràctica, repte, punts
 **Perquè Google la trobi:** entra a https://search.google.com/search-console, afegeix l'adreça de la web i demana la indexació. Google sol trigar uns dies a mostrar-la.
 
 **Opció GitHub Pages:** si connectes GitHub a Claude, Claude la pot publicar i actualitzar directament cada vegada que hi afegim unitats.
+
+## Llicència
+Material educatiu obert amb llicència Creative Commons BY-SA 4.0: es pot compartir i adaptar citant l'autoria.
