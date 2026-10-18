@@ -86,6 +86,10 @@
     },
   };
 
+  const PATI_HOW = H(
+    'Observació a l\'aire lliure amb llista de control (treball en equip, ús del llenguatge matemàtic) i registre a la llibreta.',
+    'Observación al aire libre con lista de control (trabajo en equipo, uso del lenguaje matemático) y registro en la libreta.',
+    'Outdoor observation with a checklist (teamwork, use of mathematical language) and notebook record.');
   const SIT_HOW = H(
     'Observació del treball en equip (rúbrica) i resposta argumentada a la pregunta motriu.',
     'Observación del trabajo en equipo (rúbrica) y respuesta argumentada a la pregunta motriz.',
@@ -96,11 +100,16 @@
     const m = Object.assign({}, COMMON, M[key]);
     m.situacio.how = m.situacio.how || SIT_HOW;
     [1, 2, 3].forEach((l) => { m.practica[l].how = m.practica[l].how || PRACT_HOW; });
+    if (U.outdoor) {
+      const od = U.outdoor('ca'), c2 = new Set(), t2 = new Set();
+      od.steps.forEach((x) => { x.ce.forEach((n) => c2.add(n)); x.tr.forEach((k) => t2.add(k)); });
+      m.pati = { ce: [...c2].sort((a, b) => a - b), tr: [...t2], how: PATI_HOW, steps: od.steps.map((x) => ({ ce: x.ce, tr: x.tr })) };
+    }
     U.cur.moments = m;
     // Unió de totes les CE i transversals que apareixen als moments
     const ce = new Set(), tr = new Set();
     const add = (x) => { (x.ce || []).forEach((n) => ce.add(n)); (x.tr || []).forEach((k) => tr.add(k)); };
-    ['situacio', 'product', 'teoria', 'explora', 'repte', 'paper'].forEach((k) => m[k] && add(m[k]));
+    ['situacio', 'product', 'teoria', 'explora', 'pati', 'repte', 'paper'].forEach((k) => m[k] && add(m[k]));
     m.steps.forEach(add); [1, 2, 3].forEach((l) => add(m.practica[l]));
     U.cur.ce = [...ce].sort((a, b) => a - b);
     const order = ['ciu', 'emp', 'cpsaa', 'dig'];

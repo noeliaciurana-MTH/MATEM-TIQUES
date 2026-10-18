@@ -35,6 +35,7 @@
       emptyAnswer: 'Escriu una resposta abans de comprovar.', diagLabel: 'On és l\'error?', situation: 'Situació real', paper: 'Fitxa en paper', pIntro: 'Genera una fitxa per fer a la llibreta. Després, l\'alumnat entra el codi i hi posa només els resultats finals: la web els corregeix i diagnostica els errors.', pNew: 'Nova fitxa', pKey: 'Inclou el full de solucions', pPrint: 'Imprimeix', pCode: 'Codi de la fitxa', pName: 'Nom', pDate: 'Data', pKeyTitle: 'Solucions', pCorrect: 'Corregeix una fitxa', pCorrectIntro: 'Has fet la fitxa a la llibreta? Escriu el codi i els teus resultats.', pLoad: 'Obre la fitxa', pCheckAll: 'Corregeix', pBadCode: 'Aquest codi no és d\'aquesta unitat. Revisa\'l.', pScore: 'encerts', pWork: 'Escriu tot el procés a la llibreta. Aquí només hi posaràs el resultat.', curriculum: 'Currículum', report: 'El meu informe', teacher: 'Per al docent',
       history: 'Matemàtiques amb història', ce: 'Competències específiques', sabers: 'Sabers (Decret 175/2022)', transv: 'Competències transversals', vectors: 'Vectors', ods: 'ODS',
       evalLb: 'Avaluem', momentsT: 'Què s\'avalua a cada moment', moment: 'Moment', evidence: 'Evidència i instrument', stepN: 'Pas', sitAll: 'Situació (global)', product: 'Producte final', evalInfo: 'CE = competència específica de matemàtiques. Cada moment indica també quines competències transversals treballa.',
+      outdoor: 'Al pati', odMat: 'Material', odTime: 'Durada', odGroup: 'Agrupament', odHow: 'Com es fa', odClose: 'Tancament', odPrint: 'Imprimeix l\'activitat',
       seqNote: 'El Decret 175/2022 agrupa els sabers de 1r a 3r d\'ESO. La distribució per cursos d\'aquesta web és una proposta de seqüenciació.',
       repTitle: 'El meu informe', repIntro: 'Escriu el teu nom i copia el codi. Envia\'l al teu professor o professora (per exemple, pel Classroom). El codi resumeix què has practicat i quins errors fas més sovint.',
       name: 'Nom i cognom', copy: 'Copia el codi', copied: 'Codi copiat', noData: 'Encara no hi ha activitat. Practica una mica i torna-hi!',
@@ -62,6 +63,7 @@
       emptyAnswer: 'Escribe una respuesta antes de comprobar.', diagLabel: '¿Dónde está el error?', situation: 'Situación real', paper: 'Ficha en papel', pIntro: 'Genera una ficha para hacer en la libreta. Después, el alumnado introduce el código y pone solo los resultados finales: la web los corrige y diagnostica los errores.', pNew: 'Nueva ficha', pKey: 'Incluye la hoja de soluciones', pPrint: 'Imprime', pCode: 'Código de la ficha', pName: 'Nombre', pDate: 'Fecha', pKeyTitle: 'Soluciones', pCorrect: 'Corrige una ficha', pCorrectIntro: '¿Has hecho la ficha en la libreta? Escribe el código y tus resultados.', pLoad: 'Abre la ficha', pCheckAll: 'Corrige', pBadCode: 'Este código no es de esta unidad. Revísalo.', pScore: 'aciertos', pWork: 'Escribe todo el proceso en la libreta. Aquí solo pondrás el resultado.', curriculum: 'Currículo', report: 'Mi informe', teacher: 'Para el docente',
       history: 'Matemáticas con historia', ce: 'Competencias específicas', sabers: 'Saberes (Decreto 175/2022)', transv: 'Competencias transversales', vectors: 'Vectores', ods: 'ODS',
       evalLb: 'Evaluamos', momentsT: 'Qué se evalúa en cada momento', moment: 'Momento', evidence: 'Evidencia e instrumento', stepN: 'Paso', sitAll: 'Situación (global)', product: 'Producto final', evalInfo: 'CE = competencia específica de matemáticas. Cada momento indica también qué competencias transversales trabaja.',
+      outdoor: 'Al patio', odMat: 'Material', odTime: 'Duración', odGroup: 'Agrupamiento', odHow: 'Cómo se hace', odClose: 'Cierre', odPrint: 'Imprime la actividad',
       seqNote: 'El Decreto 175/2022 agrupa los saberes de 1.º a 3.º de ESO. La distribución por cursos de esta web es una propuesta de secuenciación.',
       repTitle: 'Mi informe', repIntro: 'Escribe tu nombre y copia el código. Envíaselo a tu profesor o profesora (por ejemplo, por Classroom). El código resume qué has practicado y qué errores cometes más a menudo.',
       name: 'Nombre y apellido', copy: 'Copia el código', copied: 'Código copiado', noData: 'Todavía no hay actividad. ¡Practica un poco y vuelve!',
@@ -89,6 +91,7 @@
       emptyAnswer: 'Type an answer before checking.', diagLabel: 'What went wrong?', situation: 'Real situation', paper: 'Paper worksheet', pIntro: 'Create a worksheet to do in the exercise book. Then students enter the code and type only their final answers: the site marks them and diagnoses mistakes.', pNew: 'New worksheet', pKey: 'Include the answer sheet', pPrint: 'Print', pCode: 'Worksheet code', pName: 'Name', pDate: 'Date', pKeyTitle: 'Answers', pCorrect: 'Mark a worksheet', pCorrectIntro: 'Done the worksheet on paper? Enter the code and your answers.', pLoad: 'Open the worksheet', pCheckAll: 'Mark it', pBadCode: 'This code is not from this unit. Check it.', pScore: 'correct', pWork: 'Write all your working in your exercise book. Only type the final answer here.', curriculum: 'Curriculum', report: 'My report', teacher: 'For teachers',
       history: 'Maths with history', ce: 'Specific competences', sabers: 'Content (Decree 175/2022)', transv: 'Cross-curricular competences', vectors: 'Curriculum vectors', ods: 'SDGs',
       evalLb: 'We assess', momentsT: 'What is assessed at each moment', moment: 'Moment', evidence: 'Evidence and tool', stepN: 'Step', sitAll: 'Situation (overall)', product: 'Final product', evalInfo: 'CE = specific maths competence. Each moment also shows the transversal competence it develops.',
+      outdoor: 'Outdoors', odMat: 'Materials', odTime: 'Time', odGroup: 'Grouping', odHow: 'How it works', odClose: 'Wrap-up', odPrint: 'Print the activity',
       seqNote: 'Catalan Decree 175/2022 groups the content for years 1 to 3 together. The year-by-year split on this site is a suggested sequence.',
       repTitle: 'My report', repIntro: 'Type your name and copy the code. Send it to your teacher (for example, via Classroom). The code sums up what you have practised and the mistakes you make most often.',
       name: 'Full name', copy: 'Copy the code', copied: 'Code copied', noData: 'No activity yet. Do some practice and come back!',
@@ -242,7 +245,7 @@
     const unit = QM.units[key];
     if (!meta || !unit) { location.hash = ''; return; }
     const p = progress(key);
-    const tabs = [['situacio', t('situation')], ['teoria', t('theory')], ['explora', t('explore')], ['practica', t('practice')], ['repte', t('challenge')], ['paper', t('paper')], ['curriculum', t('curriculum')]];
+    const tabs = [['situacio', t('situation')], ['teoria', t('theory')], ['explora', t('explore')], ['pati', t('outdoor')], ['practica', t('practice')], ['repte', t('challenge')], ['paper', t('paper')], ['curriculum', t('curriculum')]];
     document.title = `${tr(meta)} · ${t('title')}`;
     app.innerHTML = `
       <div class="wrap">
@@ -266,6 +269,7 @@
     else if (S.tab === 'paper') renderPaper(panel, unit, key);
     else if (S.tab === 'teoria') renderTheory(panel, unit);
     else if (S.tab === 'explora') unit.explore(panel, S.lang);
+    else if (S.tab === 'pati') renderOutdoor(panel, unit);
     else if (S.tab === 'practica') renderPractice(panel, unit, key);
     else renderChallenge(panel, unit, key);
     if (S.tab !== 'curriculum') putEvalBar(panel, unit, S.tab);
@@ -281,6 +285,21 @@
     panel.querySelectorAll('[data-go]').forEach((a) => a.onclick = (e) => {
       e.preventDefault(); panel.querySelector('#th-' + a.dataset.go).scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  }
+
+  function renderOutdoor(panel, unit) {
+    if (!unit.outdoor) { panel.innerHTML = ''; return; }
+    const o = unit.outdoor(S.lang);
+    panel.innerHTML = `<article class="sheet outdoor"><h2>${o.title}</h2>
+      <p class="lead2">${o.lead}</p>
+      <div class="odmeta"><div><span>${t('odTime')}</span><b>${o.time}</b></div><div><span>${t('odGroup')}</span><b>${o.group}</b></div></div>
+      <h3>${t('odMat')}</h3><ul>${o.materials.map((x) => `<li>${x}</li>`).join('')}</ul>
+      <h3>${t('odHow')}</h3><ol>${o.steps.map((x) => `<li>${x.html} ${chips(x)}</li>`).join('')}</ol>
+      ${o.tool ? `<div class="tool">${o.tool}</div>` : ''}
+      <div class="rule"><span class="t">${t('odClose')}</span>${o.close}</div>
+      <div class="actions noprint"><button type="button" class="btn ghost" id="od-print">${t('odPrint')}</button></div></article>`;
+    if (o.init) o.init(panel);
+    panel.querySelector('#od-print').onclick = () => { try { window.print(); } catch (e) { /* sense impressió */ } };
   }
 
   function renderSituation(panel, unit) {
@@ -321,6 +340,7 @@
     row(`<span class="indent">${t('product')}</span>`, m.product);
     row(`<b>${t('theory')}</b>`, m.teoria);
     row(`<b>${t('explore')}</b>`, m.explora);
+    if (m.pati) { row(`<b>${t('outdoor')}</b>`, m.pati); m.pati.steps.forEach((x, i) => row(`<span class="indent">${t('stepN')} ${i + 1}</span>`, x)); }
     [1, 2, 3].forEach((l) => row(`<b>${t('practice')}</b> · ${t('lv' + l)}`, m.practica[l]));
     row(`<b>${t('challenge')}</b>`, m.repte);
     row(`<b>${t('paper')}</b>`, m.paper);

@@ -431,3 +431,16 @@ ul.ce b { font-family: var(--f-math); color: var(--red); margin-right: 4px; }
 .mtbl .indent { padding-left: 14px; color: var(--ink-soft); }
 .ps-eval { font-size: 0.85rem; margin: 4px 0 0; }
 @media print { .evalbar { display: none; } .cechip, .trchip { background: none; } }
+
+/* ---------- Al pati ---------- */
+.odmeta { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 4px; }
+.odmeta > div { border: 1px dashed var(--line); border-radius: var(--radius); padding: 6px 12px; display: grid; }
+.odmeta span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
+.outdoor ol > li { margin-bottom: 6px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; }
+.cards.wide { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.card { border: 2px dashed var(--ink-soft); border-radius: 6px; min-height: 80px; display: grid; place-items: center; font-size: 1.6rem; background: var(--paper); padding: 8px; break-inside: avoid; }
+.card.station { font-size: 1.15rem; gap: 6px; align-content: center; text-align: center; }
+.card .stn { font-family: var(--f-chalk); font-size: 1.5rem; color: var(--red); }
+.outdoor .txt { display: block; margin-top: 4px; max-width: 160px; }
+@media print { .noprint, .outdoor .chips, .outdoor .evchips { display: none !important; } }
