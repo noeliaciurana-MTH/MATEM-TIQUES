@@ -34,6 +34,7 @@
       badgeNew: 'Nova medalla!', footer: 'Quadern de Mates · Matemàtiques d\'ESO', progressNote: 'El progrés es guarda en aquest navegador.',
       emptyAnswer: 'Escriu una resposta abans de comprovar.', diagLabel: 'On és l\'error?', situation: 'Situació real', paper: 'Fitxa en paper', pIntro: 'Genera una fitxa per fer a la llibreta. Després, l\'alumnat entra el codi i hi posa només els resultats finals: la web els corregeix i diagnostica els errors.', pNew: 'Nova fitxa', pKey: 'Inclou el full de solucions', pPrint: 'Imprimeix', pCode: 'Codi de la fitxa', pName: 'Nom', pDate: 'Data', pKeyTitle: 'Solucions', pCorrect: 'Corregeix una fitxa', pCorrectIntro: 'Has fet la fitxa a la llibreta? Escriu el codi i els teus resultats.', pLoad: 'Obre la fitxa', pCheckAll: 'Corregeix', pBadCode: 'Aquest codi no és d\'aquesta unitat. Revisa\'l.', pScore: 'encerts', pWork: 'Escriu tot el procés a la llibreta. Aquí només hi posaràs el resultat.', curriculum: 'Currículum', report: 'El meu informe', teacher: 'Per al docent',
       history: 'Matemàtiques amb història', ce: 'Competències específiques', sabers: 'Sabers (Decret 175/2022)', transv: 'Competències transversals', vectors: 'Vectors', ods: 'ODS',
+      evalLb: 'Avaluem', momentsT: 'Què s\'avalua a cada moment', moment: 'Moment', evidence: 'Evidència i instrument', stepN: 'Pas', sitAll: 'Situació (global)', product: 'Producte final', evalInfo: 'CE = competència específica de matemàtiques. Cada moment indica també quines competències transversals treballa.',
       seqNote: 'El Decret 175/2022 agrupa els sabers de 1r a 3r d\'ESO. La distribució per cursos d\'aquesta web és una proposta de seqüenciació.',
       repTitle: 'El meu informe', repIntro: 'Escriu el teu nom i copia el codi. Envia\'l al teu professor o professora (per exemple, pel Classroom). El codi resumeix què has practicat i quins errors fas més sovint.',
       name: 'Nom i cognom', copy: 'Copia el codi', copied: 'Codi copiat', noData: 'Encara no hi ha activitat. Practica una mica i torna-hi!',
@@ -60,6 +61,7 @@
       badgeNew: '¡Nueva medalla!', footer: 'Cuaderno de Mates · Matemáticas de ESO', progressNote: 'El progreso se guarda en este navegador.',
       emptyAnswer: 'Escribe una respuesta antes de comprobar.', diagLabel: '¿Dónde está el error?', situation: 'Situación real', paper: 'Ficha en papel', pIntro: 'Genera una ficha para hacer en la libreta. Después, el alumnado introduce el código y pone solo los resultados finales: la web los corrige y diagnostica los errores.', pNew: 'Nueva ficha', pKey: 'Incluye la hoja de soluciones', pPrint: 'Imprime', pCode: 'Código de la ficha', pName: 'Nombre', pDate: 'Fecha', pKeyTitle: 'Soluciones', pCorrect: 'Corrige una ficha', pCorrectIntro: '¿Has hecho la ficha en la libreta? Escribe el código y tus resultados.', pLoad: 'Abre la ficha', pCheckAll: 'Corrige', pBadCode: 'Este código no es de esta unidad. Revísalo.', pScore: 'aciertos', pWork: 'Escribe todo el proceso en la libreta. Aquí solo pondrás el resultado.', curriculum: 'Currículo', report: 'Mi informe', teacher: 'Para el docente',
       history: 'Matemáticas con historia', ce: 'Competencias específicas', sabers: 'Saberes (Decreto 175/2022)', transv: 'Competencias transversales', vectors: 'Vectores', ods: 'ODS',
+      evalLb: 'Evaluamos', momentsT: 'Qué se evalúa en cada momento', moment: 'Momento', evidence: 'Evidencia e instrumento', stepN: 'Paso', sitAll: 'Situación (global)', product: 'Producto final', evalInfo: 'CE = competencia específica de matemáticas. Cada momento indica también qué competencias transversales trabaja.',
       seqNote: 'El Decreto 175/2022 agrupa los saberes de 1.º a 3.º de ESO. La distribución por cursos de esta web es una propuesta de secuenciación.',
       repTitle: 'Mi informe', repIntro: 'Escribe tu nombre y copia el código. Envíaselo a tu profesor o profesora (por ejemplo, por Classroom). El código resume qué has practicado y qué errores cometes más a menudo.',
       name: 'Nombre y apellido', copy: 'Copia el código', copied: 'Código copiado', noData: 'Todavía no hay actividad. ¡Practica un poco y vuelve!',
@@ -86,6 +88,7 @@
       badgeNew: 'New medal!', footer: 'Maths Notebook · Secondary school maths', progressNote: 'Progress is saved in this browser.',
       emptyAnswer: 'Type an answer before checking.', diagLabel: 'What went wrong?', situation: 'Real situation', paper: 'Paper worksheet', pIntro: 'Create a worksheet to do in the exercise book. Then students enter the code and type only their final answers: the site marks them and diagnoses mistakes.', pNew: 'New worksheet', pKey: 'Include the answer sheet', pPrint: 'Print', pCode: 'Worksheet code', pName: 'Name', pDate: 'Date', pKeyTitle: 'Answers', pCorrect: 'Mark a worksheet', pCorrectIntro: 'Done the worksheet on paper? Enter the code and your answers.', pLoad: 'Open the worksheet', pCheckAll: 'Mark it', pBadCode: 'This code is not from this unit. Check it.', pScore: 'correct', pWork: 'Write all your working in your exercise book. Only type the final answer here.', curriculum: 'Curriculum', report: 'My report', teacher: 'For teachers',
       history: 'Maths with history', ce: 'Specific competences', sabers: 'Content (Decree 175/2022)', transv: 'Cross-curricular competences', vectors: 'Curriculum vectors', ods: 'SDGs',
+      evalLb: 'We assess', momentsT: 'What is assessed at each moment', moment: 'Moment', evidence: 'Evidence and tool', stepN: 'Step', sitAll: 'Situation (overall)', product: 'Final product', evalInfo: 'CE = specific maths competence. Each moment also shows the transversal competence it develops.',
       seqNote: 'Catalan Decree 175/2022 groups the content for years 1 to 3 together. The year-by-year split on this site is a suggested sequence.',
       repTitle: 'My report', repIntro: 'Type your name and copy the code. Send it to your teacher (for example, via Classroom). The code sums up what you have practised and the mistakes you make most often.',
       name: 'Full name', copy: 'Copy the code', copied: 'Code copied', noData: 'No activity yet. Do some practice and come back!',
@@ -265,6 +268,7 @@
     else if (S.tab === 'explora') unit.explore(panel, S.lang);
     else if (S.tab === 'practica') renderPractice(panel, unit, key);
     else renderChallenge(panel, unit, key);
+    if (S.tab !== 'curriculum') putEvalBar(panel, unit, S.tab);
   }
 
   function renderTheory(panel, unit) {
@@ -284,6 +288,45 @@
     const sit = unit.situation(S.lang);
     panel.innerHTML = `<article class="sheet situation"><h2>${sit.title}</h2>${sit.html}</article>`;
     if (sit.init) sit.init(panel);
+    const m = unit.cur && unit.cur.moments;
+    if (m) {
+      panel.querySelectorAll('.situation > ol > li').forEach((li, i) => { if (m.steps[i]) li.insertAdjacentHTML('beforeend', ' ' + chips(m.steps[i])); });
+      const pr = panel.querySelector('.situation .rule.product'); if (pr && m.product) pr.insertAdjacentHTML('beforeend', `<div>${chips(m.product)}</div>`);
+    }
+  }
+
+  // ---------- Què s'avalua a cada moment ----------
+  const ceChip = (n) => `<span class="cechip" title="CE${n} · ${tr(QM.CE[n])}">CE${n}</span>`;
+  const trChip = (k) => `<span class="trchip" title="${tr(QM.TRANSV[k])}">${tr(QM.TRANSV_SHORT[k])}</span>`;
+  const chips = (m) => m ? `<span class="evchips">${(m.ce || []).map(ceChip).join('')}${(m.tr || []).map(trChip).join('')}</span>` : '';
+  function momentOf(unit, tab) {
+    const m = unit.cur && unit.cur.moments; if (!m) return null;
+    return tab === 'practica' ? m.practica[S.level] : m[tab];
+  }
+  function evalBarHTML(unit, tab) {
+    const m = momentOf(unit, tab); if (!m) return '';
+    const extra = tab === 'practica' ? ` · ${t('lv' + S.level)}` : '';
+    return `<div class="evalbar"><span class="lb">${t('evalLb')}${extra}</span>${chips(m)}${m.how ? `<span class="how">${tr(m.how)}</span>` : ''}</div>`;
+  }
+  function putEvalBar(panel, unit, tab) {
+    const old = panel.querySelector(':scope > .evalbar'); if (old) old.remove();
+    const h = evalBarHTML(unit, tab); if (h) panel.insertAdjacentHTML('afterbegin', h);
+  }
+  function momentsTable(unit) {
+    const m = unit.cur && unit.cur.moments; if (!m) return '';
+    const rows = [];
+    const row = (label, x) => rows.push(`<tr><th scope="row">${label}</th><td>${(x.ce || []).map(ceChip).join('')}</td><td>${(x.tr || []).map(trChip).join('')}</td><td>${x.how ? tr(x.how) : ''}</td></tr>`);
+    row(`<b>${t('situation')}</b> · ${t('sitAll')}`, m.situacio);
+    m.steps.forEach((x, i) => row(`<span class="indent">${t('stepN')} ${i + 1}</span>`, x));
+    row(`<span class="indent">${t('product')}</span>`, m.product);
+    row(`<b>${t('theory')}</b>`, m.teoria);
+    row(`<b>${t('explore')}</b>`, m.explora);
+    [1, 2, 3].forEach((l) => row(`<b>${t('practice')}</b> · ${t('lv' + l)}`, m.practica[l]));
+    row(`<b>${t('challenge')}</b>`, m.repte);
+    row(`<b>${t('paper')}</b>`, m.paper);
+    row(`<b>${t('report')}</b>`, m.informe);
+    return `<section class="moments"><h3>${t('momentsT')}</h3><p class="muted">${t('evalInfo')}</p>
+      <div class="tblwrap"><table class="tbl mtbl"><thead><tr><th>${t('moment')}</th><th>CE</th><th>${t('transv')}</th><th>${t('evidence')}</th></tr></thead><tbody>${rows.join('')}</tbody></table></div></section>`;
   }
 
   function curriculumHTML(unit) {
@@ -293,7 +336,7 @@
       <div class="box"><h3>${t('sabers')}</h3><ul>${c.sabers.map((x) => `<li>${x}</li>`).join('')}</ul></div>
       <div class="box"><h3>${t('transv')}</h3><ul>${c.transv.map((k) => `<li>${tr(QM.TRANSV[k])}</li>`).join('')}</ul></div>
       <div class="box"><h3>${t('vectors')}</h3><ul>${c.vectors.map((k) => `<li>${tr(QM.VECTORS[k])}</li>`).join('')}</ul>${c.ods ? `<p class="muted">${t('ods')}: ${c.ods.join(', ')}</p>` : ''}</div>
-    </div>`;
+    </div>${momentsTable(unit)}`;
   }
   function renderCurriculum(panel, unit) {
     panel.innerHTML = `${curriculumHTML(unit)}<p class="muted" style="margin-top:14px">${t('seqNote')}</p>`;
@@ -325,7 +368,7 @@
       panel.querySelector('#p-sheet').innerHTML = `<article class="printsheet">
         <header class="ps-head"><div><b>${t('title')}</b> · ${document.querySelector('.unit-board h1').textContent} · ${t('lv' + level)}</div>
           <div class="ps-lines"><span>${t('pName')}: ____________________</span><span>${t('pDate')}: ________</span><span>${t('pCode')}: <b class="mono">${code}</b></span></div>
-          <p class="muted">${t('pWork')}</p></header>
+          <p class="muted">${t('pWork')}</p>${unit.cur && unit.cur.moments ? `<p class="ps-eval">${t('evalLb')}: ${chips(unit.cur.moments.paper)}</p>` : ''}</header>
         <ol class="ps-list">${exs.map((e) => `<li><div class="q">${e.q}</div><div class="ps-space"></div></li>`).join('')}</ol>
         <section class="ps-key" ${panel.querySelector('#p-key').checked ? '' : 'hidden'}><h3>${t('pKeyTitle')} · <span class="mono">${code}</span></h3><ol>${exs.map((e) => `<li>${e.sol}</li>`).join('')}</ol></section>
       </article>`;
@@ -524,6 +567,7 @@
     panel.querySelectorAll('[data-lv]').forEach((b) => b.onclick = () => {
       S.level = +b.dataset.lv;
       panel.querySelectorAll('[data-lv]').forEach((x) => x.setAttribute('aria-pressed', x === b));
+      putEvalBar(panel, unit, 'practica');
       next();
     });
     function side() {
