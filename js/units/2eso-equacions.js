@@ -366,7 +366,7 @@
   }
 
   QM.units['2eso-equacions'] = {
-    theory, explore,
+    code: 'EQU', theory, explore,
     board: () => `${X} = ${F(`−${v('b')} ± √<span class="ov">${v('b')}<sup>2</sup> − 4${v('a')}${v('c')}</span>`, `2${v('a')}`)}`,
     levels: {
       1: [oneStep, twoStep, thinkNumber],

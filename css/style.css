@@ -383,6 +383,30 @@ ul.ce b { font-family: var(--f-math); color: var(--red); margin-right: 4px; }
   .course-btn b { font-size: 1.3rem; }
   .course-btn span { display: none; }
 }
+/* Fitxa en paper */
+.paper-ui { display: grid; gap: 16px; }
+.paper-ui .actions { align-items: center; }
+.paper-ui label.check { display: flex; gap: 8px; align-items: center; }
+.printsheet { background: var(--surface); border: 1px solid var(--line); padding: 28px clamp(16px, 4vw, 40px); display: grid; gap: 18px; min-width: 0; }
+.ps-head { display: grid; gap: 8px; border-bottom: 2px solid var(--ink); padding-bottom: 12px; }
+.ps-lines { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.ps-list { display: grid; gap: 18px; padding-left: 1.4em; }
+.ps-list > li { min-width: 0; }
+.ps-space { height: 90px; border-bottom: 1px dashed var(--line); }
+.ps-key { border-top: 2px dashed var(--ink-soft); padding-top: 14px; display: grid; gap: 8px; }
+.ps-key ol { display: grid; gap: 6px; }
+.correct-box .actions { align-items: center; }
+.pc-item { display: grid; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+
+@media print {
+  body { background: #fff; color: #000; }
+  body::before, .topbar, .foot, .unit-board, .tabs, .paper-ui > p, .paper-ui > .levels, .paper-ui > .actions, .correct-box { display: none !important; }
+  .panel { padding: 0; }
+  .printsheet { border: 0; padding: 0; }
+  .ps-key { break-before: page; }
+  .ps-list > li { break-inside: avoid; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }

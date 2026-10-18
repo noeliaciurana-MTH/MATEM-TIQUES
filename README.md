@@ -8,6 +8,7 @@ Web de matemàtiques d'ESO (1r a 4t) en català, castellà i anglès. HTML, CSS 
 - **Explora**: laboratoris interactius per experimentar (p. ex. la mateixa fracció en barra, pastís, recta i decimal).
 - **Practica**: exercicis generats a l'atzar en 3 nivells (Bàsic, Mitjà, Avançat), amb correcció immediata, **diagnòstic de l'error típic**, pistes i solució pas a pas.
 - **Repte**: 10 preguntes de dificultat creixent amb cronòmetre i medalles (or, plata, bronze).
+- **Fitxa en paper**: fitxa imprimible amb codi; l'alumnat la fa a la llibreta i després hi entra els resultats per corregir-los i diagnosticar els errors.
 - **Currículum**: competències específiques, sabers, competències transversals i vectors del Decret 175/2022.
 
 A més: **El meu informe** (l'alumne genera un codi amb el seu progrés i els seus errors freqüents) i **Per al docent** (enganxes els codis del grup i veus els errors més comuns i el mapa curricular).

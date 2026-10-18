@@ -32,7 +32,7 @@
       start: 'Comença el repte', best: 'Millor resultat', none: 'encara cap', gold: 'Or', silver: 'Plata', bronze: 'Bronze',
       result: 'Resultat', again: 'Torna-ho a provar', time: 'Temps', q: 'Pregunta',
       badgeNew: 'Nova medalla!', footer: 'Quadern de Mates · Matemàtiques d\'ESO', progressNote: 'El progrés es guarda en aquest navegador.',
-      emptyAnswer: 'Escriu una resposta abans de comprovar.', diagLabel: 'On és l\'error?', situation: 'Situació real', curriculum: 'Currículum', report: 'El meu informe', teacher: 'Per al docent',
+      emptyAnswer: 'Escriu una resposta abans de comprovar.', diagLabel: 'On és l\'error?', situation: 'Situació real', paper: 'Fitxa en paper', pIntro: 'Genera una fitxa per fer a la llibreta. Després, l\'alumnat entra el codi i hi posa només els resultats finals: la web els corregeix i diagnostica els errors.', pNew: 'Nova fitxa', pKey: 'Inclou el full de solucions', pPrint: 'Imprimeix', pCode: 'Codi de la fitxa', pName: 'Nom', pDate: 'Data', pKeyTitle: 'Solucions', pCorrect: 'Corregeix una fitxa', pCorrectIntro: 'Has fet la fitxa a la llibreta? Escriu el codi i els teus resultats.', pLoad: 'Obre la fitxa', pCheckAll: 'Corregeix', pBadCode: 'Aquest codi no és d\'aquesta unitat. Revisa\'l.', pScore: 'encerts', pWork: 'Escriu tot el procés a la llibreta. Aquí només hi posaràs el resultat.', curriculum: 'Currículum', report: 'El meu informe', teacher: 'Per al docent',
       history: 'Matemàtiques amb història', ce: 'Competències específiques', sabers: 'Sabers (Decret 175/2022)', transv: 'Competències transversals', vectors: 'Vectors', ods: 'ODS',
       seqNote: 'El Decret 175/2022 agrupa els sabers de 1r a 3r d\'ESO. La distribució per cursos d\'aquesta web és una proposta de seqüenciació.',
       repTitle: 'El meu informe', repIntro: 'Escriu el teu nom i copia el codi. Envia\'l al teu professor o professora (per exemple, pel Classroom). El codi resumeix què has practicat i quins errors fas més sovint.',
@@ -58,7 +58,7 @@
       start: 'Empieza el reto', best: 'Mejor resultado', none: 'todavía ninguno', gold: 'Oro', silver: 'Plata', bronze: 'Bronce',
       result: 'Resultado', again: 'Vuelve a intentarlo', time: 'Tiempo', q: 'Pregunta',
       badgeNew: '¡Nueva medalla!', footer: 'Cuaderno de Mates · Matemáticas de ESO', progressNote: 'El progreso se guarda en este navegador.',
-      emptyAnswer: 'Escribe una respuesta antes de comprobar.', diagLabel: '¿Dónde está el error?', situation: 'Situación real', curriculum: 'Currículo', report: 'Mi informe', teacher: 'Para el docente',
+      emptyAnswer: 'Escribe una respuesta antes de comprobar.', diagLabel: '¿Dónde está el error?', situation: 'Situación real', paper: 'Ficha en papel', pIntro: 'Genera una ficha para hacer en la libreta. Después, el alumnado introduce el código y pone solo los resultados finales: la web los corrige y diagnostica los errores.', pNew: 'Nueva ficha', pKey: 'Incluye la hoja de soluciones', pPrint: 'Imprime', pCode: 'Código de la ficha', pName: 'Nombre', pDate: 'Fecha', pKeyTitle: 'Soluciones', pCorrect: 'Corrige una ficha', pCorrectIntro: '¿Has hecho la ficha en la libreta? Escribe el código y tus resultados.', pLoad: 'Abre la ficha', pCheckAll: 'Corrige', pBadCode: 'Este código no es de esta unidad. Revísalo.', pScore: 'aciertos', pWork: 'Escribe todo el proceso en la libreta. Aquí solo pondrás el resultado.', curriculum: 'Currículo', report: 'Mi informe', teacher: 'Para el docente',
       history: 'Matemáticas con historia', ce: 'Competencias específicas', sabers: 'Saberes (Decreto 175/2022)', transv: 'Competencias transversales', vectors: 'Vectores', ods: 'ODS',
       seqNote: 'El Decreto 175/2022 agrupa los saberes de 1.º a 3.º de ESO. La distribución por cursos de esta web es una propuesta de secuenciación.',
       repTitle: 'Mi informe', repIntro: 'Escribe tu nombre y copia el código. Envíaselo a tu profesor o profesora (por ejemplo, por Classroom). El código resume qué has practicado y qué errores cometes más a menudo.',
@@ -84,7 +84,7 @@
       start: 'Start the challenge', best: 'Best result', none: 'none yet', gold: 'Gold', silver: 'Silver', bronze: 'Bronze',
       result: 'Result', again: 'Try again', time: 'Time', q: 'Question',
       badgeNew: 'New medal!', footer: 'Maths Notebook · Secondary school maths', progressNote: 'Progress is saved in this browser.',
-      emptyAnswer: 'Type an answer before checking.', diagLabel: 'What went wrong?', situation: 'Real situation', curriculum: 'Curriculum', report: 'My report', teacher: 'For teachers',
+      emptyAnswer: 'Type an answer before checking.', diagLabel: 'What went wrong?', situation: 'Real situation', paper: 'Paper worksheet', pIntro: 'Create a worksheet to do in the exercise book. Then students enter the code and type only their final answers: the site marks them and diagnoses mistakes.', pNew: 'New worksheet', pKey: 'Include the answer sheet', pPrint: 'Print', pCode: 'Worksheet code', pName: 'Name', pDate: 'Date', pKeyTitle: 'Answers', pCorrect: 'Mark a worksheet', pCorrectIntro: 'Done the worksheet on paper? Enter the code and your answers.', pLoad: 'Open the worksheet', pCheckAll: 'Mark it', pBadCode: 'This code is not from this unit. Check it.', pScore: 'correct', pWork: 'Write all your working in your exercise book. Only type the final answer here.', curriculum: 'Curriculum', report: 'My report', teacher: 'For teachers',
       history: 'Maths with history', ce: 'Specific competences', sabers: 'Content (Decree 175/2022)', transv: 'Cross-curricular competences', vectors: 'Curriculum vectors', ods: 'SDGs',
       seqNote: 'Catalan Decree 175/2022 groups the content for years 1 to 3 together. The year-by-year split on this site is a suggested sequence.',
       repTitle: 'My report', repIntro: 'Type your name and copy the code. Send it to your teacher (for example, via Classroom). The code sums up what you have practised and the mistakes you make most often.',
@@ -239,7 +239,7 @@
     const unit = QM.units[key];
     if (!meta || !unit) { location.hash = ''; return; }
     const p = progress(key);
-    const tabs = [['situacio', t('situation')], ['teoria', t('theory')], ['explora', t('explore')], ['practica', t('practice')], ['repte', t('challenge')], ['curriculum', t('curriculum')]];
+    const tabs = [['situacio', t('situation')], ['teoria', t('theory')], ['explora', t('explore')], ['practica', t('practice')], ['repte', t('challenge')], ['paper', t('paper')], ['curriculum', t('curriculum')]];
     document.title = `${tr(meta)} · ${t('title')}`;
     app.innerHTML = `
       <div class="wrap">
@@ -260,6 +260,7 @@
     const panel = app.querySelector('#panel');
     if (S.tab === 'situacio') renderSituation(panel, unit);
     else if (S.tab === 'curriculum') renderCurriculum(panel, unit);
+    else if (S.tab === 'paper') renderPaper(panel, unit, key);
     else if (S.tab === 'teoria') renderTheory(panel, unit);
     else if (S.tab === 'explora') unit.explore(panel, S.lang);
     else if (S.tab === 'practica') renderPractice(panel, unit, key);
@@ -296,6 +297,65 @@
   }
   function renderCurriculum(panel, unit) {
     panel.innerHTML = `${curriculumHTML(unit)}<p class="muted" style="margin-top:14px">${t('seqNote')}</p>`;
+  }
+
+  // ---------- Fitxa en paper ----------
+  const SHEET_N = 8;
+  function sheetExercises(unit, level, seed) {
+    const out = [];
+    for (let i = 0; i < SHEET_N; i++) out.push(QM.seeded(seed * 97 + i, () => QM.pick(unit.levels[level])(S.lang)));
+    return out;
+  }
+  function renderPaper(panel, unit, key) {
+    let level = S.level, seed = 1000 + Math.floor(Math.random() * 9000);
+    panel.innerHTML = `<div class="paper-ui">
+      <p class="muted">${t('pIntro')}</p>
+      <div class="levels" role="group">${[1, 2, 3].map((l) => `<button type="button" class="lv" data-plv="${l}" aria-pressed="${level === l}"><span class="dotsLv">${'●'.repeat(l)}${'○'.repeat(3 - l)}</span>${t('lv' + l)}</button>`).join('')}</div>
+      <div class="actions">
+        <button type="button" class="btn ghost" id="p-new">${t('pNew')}</button>
+        <label class="check"><input type="checkbox" id="p-key"> ${t('pKey')}</label>
+        <button type="button" class="btn" id="p-print">${t('pPrint')}</button>
+      </div>
+      <div id="p-sheet"></div>
+      <section class="box correct-box"><h3>${t('pCorrect')}</h3><p class="muted">${t('pCorrectIntro')}</p>
+        <div class="actions"><input id="p-code" class="txt" placeholder="${unit.code}-1-1234" autocomplete="off"><button type="button" class="btn" id="p-load">${t('pLoad')}</button></div>
+        <div id="p-correct"></div></section></div>`;
+    const draw = () => {
+      const exs = sheetExercises(unit, level, seed), code = `${unit.code}-${level}-${seed}`;
+      panel.querySelector('#p-sheet').innerHTML = `<article class="printsheet">
+        <header class="ps-head"><div><b>${t('title')}</b> · ${document.querySelector('.unit-board h1').textContent} · ${t('lv' + level)}</div>
+          <div class="ps-lines"><span>${t('pName')}: ____________________</span><span>${t('pDate')}: ________</span><span>${t('pCode')}: <b class="mono">${code}</b></span></div>
+          <p class="muted">${t('pWork')}</p></header>
+        <ol class="ps-list">${exs.map((e) => `<li><div class="q">${e.q}</div><div class="ps-space"></div></li>`).join('')}</ol>
+        <section class="ps-key" ${panel.querySelector('#p-key').checked ? '' : 'hidden'}><h3>${t('pKeyTitle')} · <span class="mono">${code}</span></h3><ol>${exs.map((e) => `<li>${e.sol}</li>`).join('')}</ol></section>
+      </article>`;
+    };
+    panel.querySelectorAll('[data-plv]').forEach((b) => b.onclick = () => { level = +b.dataset.plv; panel.querySelectorAll('[data-plv]').forEach((x) => x.setAttribute('aria-pressed', x === b)); draw(); });
+    panel.querySelector('#p-new').onclick = () => { seed = 1000 + Math.floor(Math.random() * 9000); draw(); };
+    panel.querySelector('#p-key').onchange = draw;
+    panel.querySelector('#p-print').onclick = () => { try { window.print(); } catch (e) { /* sense impressió */ } };
+    panel.querySelector('#p-load').onclick = () => {
+      const m = panel.querySelector('#p-code').value.trim().toUpperCase().match(/^([A-Z]+)-([123])-(\d{4})$/);
+      const out = panel.querySelector('#p-correct');
+      if (!m || m[1] !== unit.code) { out.innerHTML = `<div class="fb ko"><strong>${t('pBadCode')}</strong></div>`; return; }
+      const lv = +m[2], exs = sheetExercises(unit, lv, +m[3]);
+      out.innerHTML = `<ol class="ps-list">${exs.map((e, i) => `<li class="pc-item" data-i="${i}"><div class="q">${e.q}</div><div class="answer"></div><div class="pc-fb" aria-live="polite"></div></li>`).join('')}</ol>
+        <div class="actions"><button type="button" class="btn" id="p-check">${t('pCheckAll')}</button><span id="p-score" class="big"></span></div>`;
+      const readers = [...out.querySelectorAll('.pc-item')].map((li, i) => answerUI(li.querySelector('.answer'), exs[i]));
+      out.querySelector('#p-check').onclick = () => {
+        let ok = 0;
+        out.querySelectorAll('.pc-item').forEach((li, i) => {
+          const val = readers[i](), r = evaluate(exs[i], val), fb = li.querySelector('.pc-fb');
+          if (r.state === 'ok') { ok++; fb.innerHTML = `<div class="fb ok"><strong>${t('correct')}</strong></div>`; if (!li.dataset.done) { bumpProgress(key, lv); li.dataset.done = 1; } }
+          else if (r.state === 'empty') fb.innerHTML = '';
+          else { const dg = r.state === 'ko' && !li.dataset.diag ? diagnose(exs[i], val, key) : null; if (dg) li.dataset.diag = 1;
+            fb.innerHTML = `<div class="fb ko"><strong>${r.state === 'partial' ? t('almost') : t('wrong')}</strong>${dg ? `<div class="diag"><span>${t('diagLabel')}</span>${dg}</div>` : ''}<div>${t('solution')}: ${exs[i].sol}</div></div>`; }
+        });
+        out.querySelector('#p-score').textContent = `${ok} / ${SHEET_N}`;
+        addPoints(ok * lv * 5);
+      };
+    };
+    draw();
   }
 
   // ---------- Informe de l'alumne ----------

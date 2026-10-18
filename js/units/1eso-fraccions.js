@@ -357,7 +357,7 @@
   }
 
   QM.units['1eso-fraccions'] = {
-    theory, explore,
+    code: 'FRA', theory, explore,
     board: () => `${F(QM.v('a'), QM.v('b'))} · ${F(QM.v('c'), QM.v('d'))} = ${F(QM.v('a') + QM.v('c'), QM.v('b') + QM.v('d'))}`,
     levels: {
       1: [identify, equivalent, simplify],

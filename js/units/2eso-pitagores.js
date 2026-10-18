@@ -290,7 +290,7 @@
   }
 
   QM.units['2eso-pitagores'] = {
-    theory, explore,
+    code: 'PIT', theory, explore,
     board: () => `${sq(v('a'))} = ${sq(v('b'))} + ${sq(v('c'))}`,
     levels: {
       1: [hyp, leg, isRight],
